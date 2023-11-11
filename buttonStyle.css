@@ -1,27 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700,500,400italic,500italic,700italic,300italic);
- body {
-	 background: #2c3940;
-	 overflow: hidden;
-	 font-family: 'Fira Sans', sans-serif;
-}
- body a {
-	 color: white;
-	 padding-top: 20px;
-	 font-size: 10px;
-	 opacity: 0.6;
-	 position: relative;
-	 top: 10px;
-	 transition: all 0.3s;
-	 font-weight: 100;
-	 text-decoration: none;
-}
 
- body a:hover {
-	 opacity: 1;
-}
- body a i.l {
-	 margin-right: 3px;
-}
  input {
 	 display:none;
 }
