@@ -4,13 +4,11 @@
     <link rel="stylesheet" type="text/css" href="textStyle.css"/>
     <link rel="stylesheet" type="text/css" href="buttonStyle.css"/>
     <link rel ="stylesheet" type ="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/>
-    
-    
     <title>Resume Page</title>
 </head>
 <body>
     <div class="container">
-        <div class="text-box">
+        <div class="text-box" id="wltz">
             <p>Hi</p>
             <h1>I'M <span id="nameText"></span><h1 class="lastName";display="block";>ZHAO</h1></h1>
             
@@ -82,7 +80,18 @@
             </label>
             </div>
         </div>
+        <div >
+            
+
+            <!-- Use it like any other HTML element -->
+                        <img class="transparent-img" src="src/portrait.png" width="400" height="400" style="position: relative; top: 50px; right: -1000px;">
+        </div>
+        <div >
+            
+            <spline-viewer id="canvas3d" url="https://prod.spline.design/FVZWbQH2B6ndj9UU/scene.splinecode" events-target="global"></spline-viewer>
+        </div>
     </div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     
     <script type="text/javascript" src="style.js"></script>
