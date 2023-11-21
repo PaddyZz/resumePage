@@ -17,15 +17,15 @@
     
 }  
 .text-box{
-    font-size: 120px;
+    font-size: 40px;
     color:#fff;
     position: absolute;
     top:8%;
     left:2%;
 }
 .lastName{
-    font-size:170px;
-    line-height: 170px;
+    font-size:40px;
+    line-height: 40px;
     margin-left: -10px;
     color:transparent;
     -webkit-text-stroke: 1px #fff;
@@ -46,3 +46,29 @@
     color:aqua;
 }
 
+
+#canvas3d {
+    height:auto;
+    width:100%;
+    position: absolute;
+    top: 450px; 
+    left: 450px; 
+} 
+
+
+
+.transparent-img{
+    opacity:0.2;
+}
+
+.transparent-img:hover{
+    animation: fade 2.5s linear forwards;
+}
+@keyframes fade {
+    0%{
+
+    }
+    100%{
+        opacity: 1;
+    }
+}
