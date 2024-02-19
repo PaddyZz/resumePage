@@ -1,0 +1,310 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700,500,400italic,500italic,700italic,300italic);
+ body {
+	 background: black;
+	    overflow: hidden;
+	 font-family: 'Fira Sans', sans-serif;
+     
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container
+{
+    visibility: hidden;
+    width:0%;
+    height:0%;
+    
+    
+}  
+/*
+#container {
+    user-select: none;
+    visibility: visible !important;
+    width:100% !important;
+    height: 100vh !important;
+    background-image: url('src/blackbg.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative ; 
+} */ /*to be deleted for the loading animation */ 
+.container_exposure {
+    user-select: none;
+    visibility: visible !important;
+    width:100% !important;
+    height: 100vh !important;
+    background-image: url('src/blackbg.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative ; 
+}
+
+
+.text-box{
+    font-size: 40px;
+    color:#fff;
+    position: absolute;
+    top:8%;
+    left:2%;
+}
+
+
+.spanBio{
+    color:white;
+    position:absolute;
+    left:40px;
+    font-size:20px;
+    display: inline-block;
+    /*max-width: calc(70.33% - 10px); 
+    white-space: pre-wrap; 
+    overflow: hidden;
+    text-overflow: clip; */
+}
+.spanBioOne {
+    top:495px;
+}
+.spanBioTwo {
+    top:520px;
+}
+.spanBioThree {
+    top:545px;
+}
+.spanBioFour {
+    top:570px;
+}
+
+.resumeButtonContainer {
+    position:absolute;
+    top:100px;
+    left:100px;
+}
+
+.cmeButtonContainer {
+    position:absolute;
+    top:100px;
+    left:100px;
+}
+
+/* =======svg_portrait=====*/
+@keyframes svg_portrait_move_up{
+
+    100%{
+        top: -3500px;
+    }
+}
+@keyframes svg_portrait_fade_out{
+    0%{
+        opacity: 1;
+    }
+    99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes drawPath {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+.svgPath {
+    animation: drawPath 25s ease-in forwards;
+  }
+.svg-portrait-container-one {
+    position: absolute;
+    top: 100px;
+    left:1100px;
+}
+.svg_test {
+    opacity: 0;
+    position: absolute;
+    top: -3300px;
+    left:-300px;
+    animation: svg_portrait_move_up 2s ease-out  forwards, svg_portrait_fade_out 2s ease-in 3s forwards;
+    animation-play-state: paused;
+}
+.portrait-img{
+    display: none;
+    border-radius: 50%; 
+    box-shadow: 0px 15px 300px 100px rebeccapurple;
+    user-select: none;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeX 2.5s  linear forwards; 
+    animation-play-state: paused;
+}
+
+
+
+.portrait-img:hover{
+    border-radius: 50%; 
+    box-shadow: 0px 15px 300px  rebeccapurple;
+    animation: fade 1.25s ease-out forwards;
+    animation-play-state: paused;
+   
+}
+
+.portrait-img.mouseleft {
+    border-radius: 50%; 
+    box-shadow: 0px 15px 300px 100px rebeccapurple;
+    animation: fadeReverse 2.5s  linear forwards;
+    animation-play-state: paused;
+}
+
+@keyframes fadeX {
+    0%{
+
+        opacity:0;
+    } 
+    40% {
+        opacity: 0.7;
+    }
+    100% {
+        
+        opacity:0.1;
+    }
+}
+@keyframes fade {
+    0%{
+        opacity:0;
+    }
+    2%{
+        opacity:0.2;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}
+
+@keyframes fadeReverse {
+    0%{
+        opacity:0;
+    }
+    2%{
+        opacity:0.8;
+    }
+    100%{
+        opacity: 0.15;
+    }
+}
+
+.nextt_button{
+    display:inline-block;
+    
+    width:0px;
+    height: 0px;
+    top: 200px;
+    left:1450px;
+    z-index: 1;
+}
+.circle-star-img {
+    opacity: 0.3;
+    user-select: none;
+}
+.rounded-text-img{
+    user-select: none;
+    animation: rotate 10s infinite linear forwards; 
+}
+
+
+@keyframes fadeCircleStar {
+    0% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+@keyframes colorchanger {
+    0%{
+        opacity: 0;
+        color: rgb(255, 255, 255);
+    }
+    20%{
+        opacity: 0.2;
+        background: linear-gradient(#ee5cc5, #75a0ea);
+        background-clip: text;
+          -webkit-background-clip: text; /* 设置背景裁剪为文字 */
+          -webkit-text-fill-color: transparent;
+    }
+    40%{
+        opacity: 0.4;
+        background: linear-gradient(#ee5cc5, #75a0ea);
+        background-clip: text;
+          -webkit-background-clip: text; /* 设置背景裁剪为文字 */
+          -webkit-text-fill-color: transparent;
+        
+    }
+    60% {
+        opacity: 0.6;
+        background: linear-gradient(#ee5cc5, #75a0ea);
+        background-clip: text;
+          -webkit-background-clip: text; /* 设置背景裁剪为文字 */
+          -webkit-text-fill-color: transparent;
+    }
+    80% {
+        opacity: 0.8;
+        background: linear-gradient(#ee5cc5, #75a0ea);
+        background-clip: text;
+          -webkit-background-clip: text; /* 设置背景裁剪为文字 */
+          -webkit-text-fill-color: transparent;
+    }
+    100%{
+        opacity: 1;
+        background: linear-gradient(#ee5cc5, #75a0ea); /* 定义渐变色 */
+          background-clip: text;
+          -webkit-background-clip: text; /* 设置背景裁剪为文字 */
+          -webkit-text-fill-color: transparent;
+    }
+    
+}
+.custom-icon {
+    opacity: 0.2;
+    color: rgb(255, 255, 255); /* 设置为白色 */
+    font-size: 30px;
+}
+
+#target{
+    
+    position: absolute;
+    right: -70px;
+    top: 40px; /* 垂直居中对齐 */
+    transform: translateY(-50%);
+
+}
+  /* totoro-fox*/
+#totoro-fox-canvas {
+        
+    z-index: 3;
+    position:absolute;
+    top:0px;
+    left:200px;
+}
+  
+.totoro-fox {
+    left:400px;
+    top:500px;
+    position:absolute;
+    display: inline-block;
+}
