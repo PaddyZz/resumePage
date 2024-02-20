@@ -57,13 +57,16 @@ const songs = [
         path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3',
        /* path: './src/the_nights_avicii.mp3', */
         displayName: 'The Nights',
-        cover: './src/TheNightsCover.png',
+        cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover.png',
+        /*cover: './src/TheNightsCover.png', */
         artist: 'Avicii',
     },
     {
-        path: './src/DreamItPossible.mp3',
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',
+        /*path: './src/DreamItPossible.mp3', */
         displayName: 'Dream It Possible',
-        cover: './src/dreamItPossibleCover.png',
+        cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',
+        /*cover: './src/dreamItPossibleCover.png',*/
         artist: 'Delacey',
     },
     
