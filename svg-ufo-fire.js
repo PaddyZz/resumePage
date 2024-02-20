@@ -1,10 +1,11 @@
    
-var ufoItself = document.querySelector('.svg-ufo');
+/*var ufoItself = document.querySelector('.svg-ufo'); 
 var elements = document.querySelectorAll('.svg-ufo g.svg_1 path, .svg-ufo g.svg_group_2 path');
-var elements_not_top_light = document.querySelectorAll(".svg-ufo g.svg_group_2 path:not(.top-light)");
-const delay_factor = 21000 ; /* 9000 = 9s*/
+var elements_not_top_light = document.querySelectorAll(".svg-ufo g.svg_group_2 path:not(.top-light)");*/
+const delay_factor = 11000 ; /* 9000 = 9s*/ /*21000*/
 
 function svgUfoCollisionAnim(delay_factor) {
+  var elements = document.querySelectorAll('.svg-ufo g.svg_1 path, .svg-ufo g.svg_group_2 path');
   setTimeout(()=> {
     anime({
     targets: elements,
@@ -22,6 +23,7 @@ function svgUfoCollisionAnim(delay_factor) {
 }
 
 function svgUfoDecomposeAnim(delay_factor) {
+ var elements_not_top_light = document.querySelectorAll(".svg-ufo g.svg_group_2 path:not(.top-light)");
 setTimeout(() => {
   
   anime({
@@ -35,6 +37,7 @@ delay: anime.stagger(100), // 每个元素之间延迟100ms
 }
 
 function svgUfoComposeAnim(delay_factor) {
+  var elements = document.querySelectorAll('.svg-ufo g.svg_1 path, .svg-ufo g.svg_group_2 path');
 setTimeout(() => {
   anime({
 targets: elements,
@@ -257,8 +260,25 @@ function trigger_stroke(delay_factor) {
   
 }
 
+function trigger_initial_anim(delay_factor) {
+  var svg_itself = document.querySelector('.svg-ufo');
+  var fire_itself = document.querySelector('.svg-fire');
 
-window.onload = () => {
+  setTimeout(()=>{
+  svg_itself.style.animationName = "svg-ufo-launchAnimation";
+  svg_itself.style.animationDuration = "10s";
+  svg_itself.style.animationTimingFunction = "ease-out";
+  svg_itself.style.animationFillMode = "forwards";
+  fire_itself.style.animationName = "svg-fire-launchAnimation";
+  fire_itself.style.animationDuration = "10s";
+  fire_itself.style.animationTimingFunction = "ease-out";
+  fire_itself.style.animationFillMode = "forwards";
+  },delay_factor-9000); 
+ 
+};
+
+window.addEventListener('load', function () {
+  trigger_initial_anim(delay_factor);
   svgUfoCollisionAnim(delay_factor);
   svgUfoDecomposeAnim(delay_factor);
   svgUfoComposeAnim(delay_factor);
@@ -272,4 +292,4 @@ window.onload = () => {
   svgFireRelaunchAnimVerTwo(delay_factor);
   trigger_stroke(delay_factor);
     
-};
+});
