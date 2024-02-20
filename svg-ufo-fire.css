@@ -15,7 +15,8 @@
     position: relative;
     top: 360px;  
     transition: opacity 0.1s ease;
-    animation: svg-ufo-launchAnimation 10s 13s ease-out forwards; /*svg-ufo-relaunchAnimation 2s 24.3s ease-out forwards; to be dealt with */
+  /*  animation: svg-ufo-launchAnimation 10s 13s ease-out forwards;*/ /*svg-ufo-relaunchAnimation 2s 24.3s ease-out forwards; to be dealt with */
+  /*  animation-play-state: paused;*/ /*to be dealt with*/
   }                                                              
   
   @keyframes svg-ufo-launchAnimation{
@@ -111,7 +112,8 @@
     position: absolute;
     top: 450px;
     scale:0.3;
-   animation: svg-fire-launchAnimation 10s 13s ease-out forwards;  
+   /*animation: svg-fire-launchAnimation 10s 13s ease-out forwards;  
+   animation-play-state: paused; *//*to be dealt with*/
   }
 .svg-fire.svg-fire-gone {
 /*  visibility: visible; */
