@@ -38,10 +38,11 @@
     visibility: visible !important;
     width:100% !important;
     height: 100vh !important;
-    background-image: url('src/blackbg.png');
+    background-color: black;
+    /*background-image: url('src/blackbg.png');
     background-size: cover; 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     position: relative ; 
 }
 
