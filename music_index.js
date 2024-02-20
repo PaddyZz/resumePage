@@ -54,7 +54,8 @@ function ctlPlayerSign() {
 
 const songs = [
     {
-        path: './src/the_nights_avicii.mp3',
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3',
+       /* path: './src/the_nights_avicii.mp3', */
         displayName: 'The Nights',
         cover: './src/TheNightsCover.png',
         artist: 'Avicii',
