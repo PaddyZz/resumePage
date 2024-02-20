@@ -1,5 +1,6 @@
-const delay_factor_typing = 10000;
+const delay_factor_typing = 10; /*10000*/
 
+window.addEventListener('load', function () {
 setTimeout(function() {
   var textBioOne = "I enjoy doing developments in Artificial Intelligence";
   var optionBioOne = {
@@ -51,7 +52,7 @@ setTimeout(function() {
     }, 2000); // 
   }, 2000); // 
 }, 5000 + delay_factor_typing); 
-
+});
 
 
 
