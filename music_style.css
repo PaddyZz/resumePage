@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'); */
 
 .music_container{
     display: none;
@@ -21,8 +21,9 @@
 
 #music-title{
     display: none;
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
+    font-family: Arboria;
     font-weight: 500;
     margin: 10px 0 0;
 }
@@ -31,9 +32,19 @@
     display: none;
     font-size: 18px;
     text-align: center;
+    font-family: Arboria;
     font-weight: 500;
     margin: 10px 0 0;
 }
+
+#current-time {
+    font-family: Arboria;
+}
+
+#duration {
+    font-family: Arboria;
+}
+
 .player-img{
     
     width: 300px;
