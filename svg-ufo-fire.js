@@ -273,7 +273,7 @@ function trigger_initial_anim(delay_factor) {
   fire_itself.style.animationDuration = "10s";
   fire_itself.style.animationTimingFunction = "ease-out";
   fire_itself.style.animationFillMode = "forwards";
-  },delay_factor-9000); 
+  },delay_factor-7000);  /*9000*/
  
 };
 
