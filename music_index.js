@@ -162,6 +162,7 @@ music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
 
-loadMusic(songs[musicIndex]);
+loadMusic(songs[1]);
+loadMusic(songs[0]);
 
 
