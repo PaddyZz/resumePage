@@ -275,9 +275,9 @@ function trigger_initial_anim(delay_factor) {
   fire_itself.style.animationFillMode = "forwards";
   },delay_factor-9000);  /*9000*/
  
-};
+}
 
-function startLoading() {
+function loading_anim_fading() {
   setTimeout(() => {
     const loaders = Array.from(document.getElementsByClassName('loader'));
     loaders.forEach(loader => {
@@ -292,19 +292,19 @@ function startLoading() {
 }
 
 window.addEventListener('load', function () {
-   startLoading();
-  trigger_initial_anim(delay_factor);
-  svgUfoCollisionAnim(delay_factor);
-  svgUfoDecomposeAnim(delay_factor);
-  svgUfoComposeAnim(delay_factor);
-  svgUfoFlashTopLight(delay_factor); 
-  svgUfoFlashThreeLights(delay_factor);
-  svgUfoRippleRayEffect(delay_factor);
-  svgUfoRelaunchAnim(delay_factor);
-  svgUfoRelaunchAnimVerTwo(delay_factor);  /*to be dealt with*/
-  svgFireFlameDancingAnim();
-  svgFireRelaunchAnim(delay_factor);
-  svgFireRelaunchAnimVerTwo(delay_factor);
-  trigger_stroke(delay_factor);
+     loading_anim_fading();
+     trigger_initial_anim(delay_factor);
+     svgUfoCollisionAnim(delay_factor);
+     svgUfoDecomposeAnim(delay_factor);
+     svgUfoComposeAnim(delay_factor);
+     svgUfoFlashTopLight(delay_factor); 
+     svgUfoFlashThreeLights(delay_factor);
+     svgUfoRippleRayEffect(delay_factor);
+     svgUfoRelaunchAnim(delay_factor);
+     svgUfoRelaunchAnimVerTwo(delay_factor);  /*to be dealt with*/
+     svgFireFlameDancingAnim();
+     svgFireRelaunchAnim(delay_factor);
+     svgFireRelaunchAnimVerTwo(delay_factor);
+     trigger_stroke(delay_factor);
     
 });
