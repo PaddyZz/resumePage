@@ -68,7 +68,7 @@ const songs = [
         /*path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',*/
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',*/
         displayName: 'Dream It Possible',
-        cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBdmwxTHhRMUZKMmpnUUQwTG1XT0xPb2RjZUNuP2U9dktoem90.webp',
+        cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmY1pWbTRqOFRCeVBEaUE_ZT1aZGJOMmE.webp',
         /*cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',*/
         /*cover: './src/dreamItPossibleCover.png',*/
         artist: 'Delacey',
