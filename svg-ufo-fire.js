@@ -285,10 +285,10 @@ function startLoading() {
     });
     
     document.getElementById("container").classList.add("container_exposure");
-  }, 10); /*10*/
+  }, 50); /*10*/
   setTimeout(() => {
     document.getElementById("loader-container").classList.add("loader-container_hidden");
-  },20 );
+  },75 );
 }
 
 window.addEventListener('load', function () {
