@@ -205,7 +205,7 @@ async function loadMusicAsync() {
       console.error('Error loading audio:', error);
     }
 }
-
+loadMusicAsync();
 
 /*loadMusic(songs[musicIndex]);*/
 
