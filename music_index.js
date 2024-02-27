@@ -58,7 +58,8 @@ const songs = [
         /*path:'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpleVR0ZmhQVUhIMHVjVk0_ZT1FY3FXdTY.mp3',*/
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3', */
         displayName: 'The Nights',
-        cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover.png',
+        cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmbFJiM1hRMTk2WkFsTDQ_ZT1oMmpTNkc.webp',
+        /*cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover.png', */
         /*cover: './src/TheNightsCover.png', */
         artist: 'Avicii',
     },
@@ -67,7 +68,8 @@ const songs = [
         /*path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',*/
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',*/
         displayName: 'Dream It Possible',
-        cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',
+        cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2YvcyFBdmwxTHhRMUZKMmpnUUQwTG1XT0xPb2RjZUNuP2U9dktoem90.webp',
+        /*cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',*/
         /*cover: './src/dreamItPossibleCover.png',*/
         artist: 'Delacey',
     },
