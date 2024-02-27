@@ -277,7 +277,22 @@ function trigger_initial_anim(delay_factor) {
  
 };
 
+function startLoading() {
+  setTimeout(() => {
+    const loaders = Array.from(document.getElementsByClassName('loader'));
+    loaders.forEach(loader => {
+      loader.classList.add('animate');
+    });
+    
+    document.getElementById("container").classList.add("container_exposure");
+  }, 10); /*10*/
+  setTimeout(() => {
+    document.getElementById("loader-container").classList.add("loader-container_hidden");
+  },20 );
+}
+
 window.addEventListener('load', function () {
+   startLoading();
   trigger_initial_anim(delay_factor);
   svgUfoCollisionAnim(delay_factor);
   svgUfoDecomposeAnim(delay_factor);
