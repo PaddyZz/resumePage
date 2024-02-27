@@ -54,8 +54,8 @@ function ctlPlayerSign() {
 
 const songs = [
     {
-        path: 'https://upcdn.io/FW25bvd/raw/the_nights_avicii.mp3',
-        /*path:'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpleVR0ZmhQVUhIMHVjVk0_ZT1FY3FXdTY.mp3',*/
+        /*path: 'https://upcdn.io/FW25bvd/raw/the_nights_avicii.mp3', */
+         path:'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpleVR0ZmhQVUhIMHVjVk0_ZT1FY3FXdTY.mp3',
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3', */
         displayName: 'The Nights',
         cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmbFJiM1hRMTk2WkFsTDQ_ZT1GcndubTU.webp',
@@ -64,8 +64,8 @@ const songs = [
         artist: 'Avicii',
     },
     {
-        path: 'https://upcdn.io/FW25bvd/raw/DreamItPossible.mp3',
-        /*path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',*/
+        /*path: 'https://upcdn.io/FW25bvd/raw/DreamItPossible.mp3', */
+         path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',*/
         displayName: 'Dream It Possible',
         cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmY1pWbTRqOFRCeVBEaUE_ZT1aZGJOMmE.webp',
@@ -161,52 +161,7 @@ music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
-async function loadMusicAsync() {
-    const songOne = songs[0];
-    const songTwo = songs[1];
-    const songOneSrc =  songOne.path;
-    const songOneCover = songOne.cover;
-    const songTwoSrc  = songTwo.path;
-    const songTwoCover = songTwo.cover;
 
-    try {
-      // 加载 MP3 文件并转换为 Blob 对象
-      fetch(songOneSrc, {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
-      fetch(songOneCover, {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
-      fetch(songTwoSrc, {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
-      fetch(songTwoCover, {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
-      //let blob = await response.blob();
-  
-      // 创建 URL 地址并设置到 audio 元素中
-      //let url = URL.createObjectURL(blob);
-      //let audio = document.getElementById('my-audio');
-      //audio.src = url;
-    } catch (error) {
-      console.error('Error loading audio:', error);
-    }
-}
-loadMusicAsync();
-
-/*loadMusic(songs[musicIndex]);*/
+loadMusic(songs[musicIndex]);
 
 
