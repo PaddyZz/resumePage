@@ -56,7 +56,8 @@ const songs = [
     {
         /*path: 'https://upcdn.io/FW25bvd/raw/the_nights_avicii.mp3', */
         /* path:'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpleVR0ZmhQVUhIMHVjVk0_ZT1FY3FXdTY.mp3', */
-        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3', 
+        /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3', */
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNights_avicii.m4a',
         displayName: 'The Nights',
        /* cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmbFJiM1hRMTk2WkFsTDQ_ZT1GcndubTU.webp', */
        /* cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover.png', */
@@ -67,7 +68,8 @@ const songs = [
     {
         /*path: 'https://upcdn.io/FW25bvd/raw/DreamItPossible.mp3', */
         /* path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',*/
-        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',
+        /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',*/
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.m4a',
         displayName: 'Dream It Possible',
       /*  cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmY1pWbTRqOFRCeVBEaUE_ZT1aZGJOMmE.webp', */
      /*   cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',*/
