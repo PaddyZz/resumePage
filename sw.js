@@ -4,6 +4,8 @@ const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3',
   'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',
+  'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp',
+  'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp',
   // 添加更多需要缓存的音乐文件
 ];
 
