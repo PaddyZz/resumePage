@@ -163,6 +163,21 @@ music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
+function preloadMusic(musicUrl, imageUrl) {
+    let audio = new Audio();
+    audio.src = musicUrl;
+    audio.load();
+    let img = new Image();
+    img.onload = function() {
+        if (img.complete) {
+            console.log('图片已完全加载');
+        }
+    };
+    img.src = imageUrl;
+}
+
+preloadMusic(songs[0].path,songs[0].cover);
+preloadMusic(songs[1].path,songs[1].cover);
 
 loadMusic(songs[musicIndex]);
 
