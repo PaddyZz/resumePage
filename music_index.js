@@ -172,7 +172,7 @@ function preloadMusic(musicUrl, imageUrl) {
     let img = new Image();
     img.onload = function() {
         if (img.complete) {
-            console.log('图片已完全加载');
+            console.log('');
         }
     };
     img.src = imageUrl;
