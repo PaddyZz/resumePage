@@ -1273,7 +1273,7 @@
 	 box-shadow: 0px 17px 18px -14px rgba(244, 49, 0, 0.08); /*0, 0, 0, 0.08*/
 }
  .button_inner:hover span.t {
-	 left: 16px;
+	 left: 8px;
 	 transition: left 0.4s;
 }
  .button_inner:hover i.l {
