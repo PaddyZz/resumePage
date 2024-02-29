@@ -1252,14 +1252,14 @@
 }
  .button_inner span.t {
 	 position: relative;
-	 top: 6px;
+	 top: 3px;
 	 opacity: 1;
 	 left: -10px;
 	 transition: left 0.4s 0.1s;
 }
  .button_inner i.l {
 	 position: relative;
-	 left: -19px;
+	 left: -10px;
 	 top: 20px;
 	 color: white;
 	 font-size: 25px;
@@ -1277,7 +1277,7 @@
 	 transition: left 0.4s;
 }
  .button_inner:hover i.l {
-	 top: 12px;
+	 top: 8px;
 	 opacity: 1;
 	 transition: left 0.3s 0s, top 0.3s 0.1s, opacity 0.3s 0.1s;
 }
