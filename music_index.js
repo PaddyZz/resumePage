@@ -200,7 +200,7 @@ preloadMusic(songs[1].path,songs[1].cover); */
 
 
 function fetchAndSetAudio() {
-    fetch('./src/TheNights_avicii.m4a')
+    fetch('https://github.com/PaddyZz/resumePage/raw/main/src/TheNights_avicii.m4a')
         .then(response => response.blob())
         .then(audioBlob => {
             globalBlobUrlSongOne = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
@@ -210,7 +210,7 @@ function fetchAndSetAudio() {
             console.error('Error fetching audio data:', error);
         });
 
-    fetch('./src/DreamItPossible.m4a')
+    fetch('https://github.com/PaddyZz/resumePage/raw/main/src/DreamItPossible.m4a')
         .then(response => response.blob())
         .then(audioBlob => {
             globalBlobUrlSongTwo = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
