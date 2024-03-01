@@ -19,6 +19,12 @@ let toggleSign = false;
 const music = new Audio();
 music.volume = 30/100;
 
+////////////
+let globalBlobUrlSongOne; // 在全局作用域定义一个变量用于存储blob URL
+let globalBlobUrlSongTwo;
+////////////
+
+
 function setVolume(){
 
     music.volume = volume_slider.value / 100;
@@ -65,6 +71,7 @@ const songs = [
         /*cover: './src/TheNightsCover.png', */
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp',
         artist: 'Avicii',
+        index:'0',
     },
     {
         /*path: 'https://upcdn.io/FW25bvd/raw/DreamItPossible.mp3', */
@@ -78,6 +85,7 @@ const songs = [
         /*cover: './src/dreamItPossibleCover.png',*/
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp',
         artist: 'Delacey',
+        index:'1',
     },
     
 ];
@@ -130,7 +138,13 @@ function pauseMusic() {
 }
 
 function loadMusic(song) {
-    music.src = song.path;
+    if (song.index == 0) {
+        music.src = globalBlobUrlSongOne;
+    }
+    if (song.index == 1) {
+        music.src = globalBlobUrlSongTwo;
+    }
+   // music.src = song.path;
     title.textContent = song.displayName;
     artist.textContent = song.artist;
     image.src = song.cover;
@@ -167,6 +181,7 @@ music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
+/*
 function preloadMusic(musicUrl, imageUrl) {
     let audio = new Audio();
     audio.src = musicUrl;
@@ -181,7 +196,32 @@ function preloadMusic(musicUrl, imageUrl) {
 }
 
 preloadMusic(songs[0].path,songs[0].cover);
-preloadMusic(songs[1].path,songs[1].cover);
+preloadMusic(songs[1].path,songs[1].cover); */
+
+
+function fetchAndSetAudio() {
+    fetch(songs[0])
+        .then(response => response.blob())
+        .then(audioBlob => {
+            globalBlobUrlSongOne = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
+
+        })
+        .catch(error => {
+            console.error('Error fetching audio data:', error);
+        });
+
+    fetch(songs[1])
+        .then(response => response.blob())
+        .then(audioBlob => {
+            globalBlobUrlSongTwo = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
+
+        })
+        .catch(error => {
+            console.error('Error fetching audio data:', error);
+        });
+}
+
+fetchAndSetAudio();
 
 loadMusic(songs[musicIndex]);
 
