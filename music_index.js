@@ -19,11 +19,6 @@ let toggleSign = false;
 const music = new Audio();
 music.volume = 30/100;
 
-////////////
-let globalBlobUrlSongOne; // 在全局作用域定义一个变量用于存储blob URL
-let globalBlobUrlSongTwo;
-////////////
-
 
 function setVolume(){
 
@@ -63,29 +58,27 @@ const songs = [
         /*path: 'https://upcdn.io/FW25bvd/raw/the_nights_avicii.mp3', */
         /* path:'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpleVR0ZmhQVUhIMHVjVk0_ZT1FY3FXdTY.mp3', */
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/the_nights_avicii.mp3', */
-        /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNights_avicii.m4a', */
-        path: './src/TheNights_avicii.m4a',
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNights_avicii.m4a', 
         displayName: 'The Nights',
        /* cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmbFJiM1hRMTk2WkFsTDQ_ZT1GcndubTU.webp', */
        /* cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover.png', */
         /*cover: './src/TheNightsCover.png', */
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp',
         artist: 'Avicii',
-        index:'0',
+       
     },
     {
         /*path: 'https://upcdn.io/FW25bvd/raw/DreamItPossible.mp3', */
         /* path: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBdmwxTHhRMUZKMmpmUGtJTVV6SHFKWHMwbTQ_ZT01RlU2eEY.mp3',*/
         /*path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.mp3',*/
-       /* path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.m4a', */
-        path: './src/DreamItPossible.m4a',
+        path: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.m4a', 
         displayName: 'Dream It Possible',
       /*  cover: 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL2kvcyFBdmwxTHhRMUZKMmpmY1pWbTRqOFRCeVBEaUE_ZT1aZGJOMmE.webp', */
      /*   cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.png',*/
         /*cover: './src/dreamItPossibleCover.png',*/
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp',
         artist: 'Delacey',
-        index:'1',
+        
     },
     
 ];
@@ -138,13 +131,7 @@ function pauseMusic() {
 }
 
 function loadMusic(song) {
-    if (song.index == 0) {
-        music.src = globalBlobUrlSongOne;
-    }
-    if (song.index == 1) {
-        music.src = globalBlobUrlSongTwo;
-    }
-   // music.src = song.path;
+    music.src = song.path;
     title.textContent = song.displayName;
     artist.textContent = song.artist;
     image.src = song.cover;
@@ -181,7 +168,7 @@ music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
-/*
+
 function preloadMusic(musicUrl, imageUrl) {
     let audio = new Audio();
     audio.src = musicUrl;
@@ -196,32 +183,8 @@ function preloadMusic(musicUrl, imageUrl) {
 }
 
 preloadMusic(songs[0].path,songs[0].cover);
-preloadMusic(songs[1].path,songs[1].cover); */
+preloadMusic(songs[1].path,songs[1].cover); 
 
-
-function fetchAndSetAudio() {
-    fetch('https://github.com/PaddyZz/resumePage/raw/main/src/TheNights_avicii.m4a')
-        .then(response => response.blob())
-        .then(audioBlob => {
-            globalBlobUrlSongOne = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
-
-        })
-        .catch(error => {
-            console.error('Error fetching audio data:', error);
-        });
-
-    fetch('https://github.com/PaddyZz/resumePage/raw/main/src/DreamItPossible.m4a')
-        .then(response => response.blob())
-        .then(audioBlob => {
-            globalBlobUrlSongTwo = URL.createObjectURL(audioBlob); // 将blob URL存储到全局变量中
-
-        })
-        .catch(error => {
-            console.error('Error fetching audio data:', error);
-        });
-}
-
-fetchAndSetAudio();
 
 loadMusic(songs[musicIndex]);
 
