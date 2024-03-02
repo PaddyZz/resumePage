@@ -176,7 +176,7 @@ function preloadMusic(musicUrl, imageUrl) {
     let img = new Image();
     img.onload = function() {
         if (img.complete) {
-            console.log('');
+            
         }
     };
     img.src = imageUrl;
