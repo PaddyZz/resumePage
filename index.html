@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <script>
+    function urlToBlob(url) {
+      return fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.blob();
+        })
+        .then(blob => blob);
+    }
+    
+    // 使用示例
+    /*const url = 'https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.4/scene.splinecode';*/
+    const url = 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/DreamItPossible.m4a';
+    urlToBlob(url)
+      .then(blob => {
+        // 在这里处理获取到的 Blob 对象
+        console.log('成功获取 Blob：', blob);
+      })
+      .catch(error => {
+        console.error('发生错误：', error);
+      });
+    </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net/">
 <!--  <link rel="preconnect" href="https://draft.spline.design/"> -->
   <link rel="preconnect" href="https://res.cloudinary.com/">
