@@ -1,3 +1,5 @@
+
+document.addEventListener("DOMContentLoaded", function(event) {
 const delay_factor_typing = 10; /*10000*/
 
 window.addEventListener('load', function () {
@@ -69,4 +71,4 @@ setTimeout(function() {
     
     link.click();
   });
- 
+});
