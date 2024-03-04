@@ -295,6 +295,8 @@
 
   </script>
   -->
+
+  <!-- //totoro
   <script type="module">
     import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
 
@@ -361,8 +363,9 @@
     fetchDataChunk();
 
 </script> 
-
- 
+ -->
+ <!-- 
+  //nextButton
   <script>
     function loadIcon() {
     // 动态创建一个 <i> 元素
@@ -380,7 +383,9 @@
     loadIcon();
 
   </script>
-  <!--
+  -->
+  
+  <!--  //nextButton
   <script>
     var imgElement = document.querySelector(".nextt_button img.rounded-text-img");
     
@@ -403,7 +408,73 @@
    -->
   
   <script type="module">
+    import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
 
+    const canvas = document.getElementById('totoro-fox-canvas');
+    const app = new Application(canvas);
+    /*https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.4/scene.splinecode*/
+   /* https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode */
+    const fileUrl = 'https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode';
+    const chunkSize = 1024 * 1024;
+    let blobDataBlock ;
+    let startByte = 0;
+    let endByte = chunkSize - 1;
+    let totalFileSize; // 保存文件总大小的变量
+    let continueFetching = true; // 控制是否继续请求数据块的变量
+    let blobChunks = []; // 保存获取到的 Blob 数据块的数组
+
+    function fetchDataChunk() {
+        
+
+        let actualEndByte = Math.min(endByte, totalFileSize - 1); // 防止请求超出文件范围
+
+        fetch(fileUrl, {
+
+          /*
+            headers: {
+                'Range': `bytes=${startByte}-${actualEndByte}`
+            } */
+        })
+            .then(response => {
+                if (!totalFileSize) {
+                    totalFileSize = Number(response.headers.get('Content-Length')); // 获取文件总大小
+                }
+                return response.blob();
+            })
+            .then(blobDataBlock => {
+                // 保存获取到的 Blob 数据块
+                console.log(blobDataBlock);
+                blobChunks.push(blobDataBlock);
+
+                // 更新下一块数据的范围
+                startByte = endByte + 1;
+                endByte = startByte + chunkSize - 1;
+
+                if (startByte >= totalFileSize) {
+                    continueFetching = false;
+                    if (!continueFetching) {
+                      console.log('文件已全部加载完成');
+                      // 将所有 Blob 数据块拼接成一个 Blob 对象
+                      const blob = new Blob(blobChunks, { type: 'application/octet-stream' });
+                      // 将 Blob 数据转换成 Blob URL
+                      const blobUrl = URL.createObjectURL(blob);
+                      // 使用 Blob URL 加载数据
+                      app.load(blobUrl);
+                      return;
+                  }// 文件全部加载完成，停止继续请求数据块
+                } else {
+                    // 继续请求下一块数据
+                    fetchDataChunk();
+                }
+            });
+    }
+
+    // 初始化请求第一块数据
+    fetchDataChunk();
+
+
+
+    //////planet
 
       const threeJsUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js";
       const glftLoderUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js";
