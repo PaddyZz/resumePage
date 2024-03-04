@@ -432,7 +432,12 @@
          // loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); 
           //loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);
         }; 
-        EarthCanvas();
+        Earth(() => {
+          console.log('3D model loaded successfully');
+          EarthCanvas();
+          // 在此处可以执行其他操作，因为所有脚本和 3D 模型都已经加载完成
+        });
+
         // 在这里可以开始使用加载完毕的脚本执行其他操作
       } catch (error) {
         console.error('Error loading scripts', error);
