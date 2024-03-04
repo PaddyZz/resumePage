@@ -4,28 +4,33 @@
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net/">
 <!--  <link rel="preconnect" href="https://draft.spline.design/"> -->
-  <link rel="preconnect" href="https://res.cloudinary.com/">
-  <link rel="icon" type="image/png"  href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/favicon.png"> 
-  <link rel ="preload" href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp" as ="image" > 
-  <link rel ="preload" href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp" as ="image" > 
- <!-- <link rel ="preload" href="https://unpkg.com/paddyzz-pkg-for-spline-3d-models@1.0.3/draco_decoder.wasm" as ="fetch" crossorigin="anonymous"> 
-  <link rel ="preload" href="https://unpkg.com/paddyzz-pkg-for-spline-3d-models@1.0.3/draco_wasm_wrapper.js" as ="script"> -->
-<!--  <link rel ="preload" href="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-draco-decoder@1.0.1/runtime.min.js" as ="script"> -->
 
- <!-- <link rel ="preload" href="https://res.cloudinary.com/dnaoraiop/raw/upload/v1709363845/scene_qps4ij.splinecode" as ="fetch" crossorigin="anonymous"> -->
+  <link rel="icon" type="image/png"  href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/favicon.png"> 
+ <!-- <link rel ="preload" href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp" as ="image" > 
+  <link rel ="preload" href="https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp" as ="image" >  -->
+
   <!--<link rel ="preload" href="https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode" as ="fetch" crossorigin="anonymous"> -->
   <link rel ="preload" href="https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf" as ="fetch" crossorigin="anonymous">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume Page</title>
+  <!-- cmeButton -->
+  
   <script src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@1.17.0/src/minified/TimelineLite.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@1.17.0/src/minified/TweenLite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@1.17.0/src/minified/easing/EasePack.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@1.17.0/src/minified/plugins/CSSPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@1.17.0/src/minified/plugins/CSSPlugin.min.js"></script> 
+
+  <!-- cmeButton -->
+
+  <!-- planetModel -->
+  <!--
   <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"></script> -->
+   <!-- planetModel-->
+  
   <script src="https://cdn.jsdelivr.net/npm/react/umd/react.development.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.development.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
@@ -186,9 +191,9 @@
 
     <div class = "button-container" style="position:absolute; top:400px; left:-100px; z-index: 1;">
       <a class = "nextt_button" href="https://paddyzz.github.io/" onmouseover="startAnimation()" onmouseout="stopAnimation()" >
-        <img class="circle-star-img" src="src/circleStar.png" width="250" height="250" style="position: relative; top: -100px; right: 60px;">
+      <!--  <img class="circle-star-img" src="src/circleStar.png" width="250" height="250" style="position: relative; top: -100px; right: 60px;">
         <img class="rounded-text-img" src="src/rounded-text.png" width="120" height="120" style="position: relative; top: -293px; right: 3px;">
-        <div id="target"></div>
+        <div id="target"></div> -->
       </a>
     </div>
     <div class="totoro-fox"> 
@@ -375,6 +380,7 @@
     loadIcon();
 
   </script>
+  <!--
   <script>
     var imgElement = document.querySelector(".nextt_button img.rounded-text-img");
     
@@ -394,10 +400,25 @@
     
     }
   </script>
-   
+   -->
   
-  <script>
-      
+  <script type="module">
+
+
+      const threeJsUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js";
+      const glftLoderUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js";
+      const orbitControlUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"
+      function planetModelLoadJs(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        document.head.appendChild(script);
+      }
+
+      planetModelLoadJs(url);
+      planetModelLoadJs(url);
+      planetModelLoadJs(url);
+    
       const Earth = (onLoad) => {
         const loader = new THREE.GLTFLoader();        
         loader.load("https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf",onLoad);
