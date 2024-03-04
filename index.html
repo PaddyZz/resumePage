@@ -25,10 +25,10 @@
   <!-- cmeButton -->
 
   <!-- planetModel -->
-  <!--
+
   <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"></script> 
    <!-- planetModel-->
   
   <script src="https://cdn.jsdelivr.net/npm/react/umd/react.development.min.js"></script>
@@ -407,279 +407,15 @@
   </script>
    -->
   
-  <script type="module">
-    import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
+  <script >
 
-    const canvas = document.getElementById('totoro-fox-canvas');
-    const app = new Application(canvas);
-    /*https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.4/scene.splinecode*/
-   /* https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode */
-    const fileUrl = 'https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode';
-    const chunkSize = 1024 * 1024;
-    let blobDataBlock ;
-    let startByte = 0;
-    let endByte = chunkSize - 1;
-    let totalFileSize; // 保存文件总大小的变量
-    let continueFetching = true; // 控制是否继续请求数据块的变量
-    let blobChunks = []; // 保存获取到的 Blob 数据块的数组
-
-    function fetchDataChunk() {
-        
-
-        let actualEndByte = Math.min(endByte, totalFileSize - 1); // 防止请求超出文件范围
-
-        fetch(fileUrl, {
-
-          /*
-            headers: {
-                'Range': `bytes=${startByte}-${actualEndByte}`
-            } */
-        })
-            .then(response => {
-                if (!totalFileSize) {
-                    totalFileSize = Number(response.headers.get('Content-Length')); // 获取文件总大小
-                }
-                return response.blob();
-            })
-            .then(blobDataBlock => {
-                // 保存获取到的 Blob 数据块
-                console.log(blobDataBlock);
-                blobChunks.push(blobDataBlock);
-
-                // 更新下一块数据的范围
-                startByte = endByte + 1;
-                endByte = startByte + chunkSize - 1;
-
-                if (startByte >= totalFileSize) {
-                    continueFetching = false;
-                    if (!continueFetching) {
-                      console.log('文件已全部加载完成');
-                      // 将所有 Blob 数据块拼接成一个 Blob 对象
-                      const blob = new Blob(blobChunks, { type: 'application/octet-stream' });
-                      // 将 Blob 数据转换成 Blob URL
-                      const blobUrl = URL.createObjectURL(blob);
-                      // 使用 Blob URL 加载数据
-                      app.load(blobUrl);
-                      return;
-                  }// 文件全部加载完成，停止继续请求数据块
-                } else {
-                    // 继续请求下一块数据
-                    fetchDataChunk();
-                }
-            });
-    }
-
-    // 初始化请求第一块数据
-    fetchDataChunk();
-
-
-
-    //////planet
-
-      const threeJsUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js";
-      const glftLoderUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js";
-      const orbitControlUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js";
-    
-      function planetModelLoadJs(url) {
-         return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = url;
-            script.async = true;
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-      }
-
-    async function loadAllPlanetModelScripts() {
-      try {
-        await planetModelLoadJs(threeJsUrl);
-        await planetModelLoadJs(glftLoderUrl);
-        await planetModelLoadJs(orbitControlUrl);
-        console.log('All scripts loaded successfully');
-        const Earth = (onLoad) => {
-          const loader = new THREE.GLTFLoader();        
-          loader.load("https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf",onLoad);
-         // loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); 
-          //loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);
-        }; 
-
-        const EarthCanvas = () => {
-    const canvasContainer = document.getElementById("canvas-container");
-    const rotationSpeed = 0.008; //0.005
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45,window.innerWidth / window.innerHeight,0.1,200);
-    camera.position.set(0, 0, 40);
-  //camera.position.set(-4, 3, 6);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMap.enabled = true;
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    canvasContainer.appendChild(renderer.domElement);
-
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    
-    controls.autoRotate = true;
-    controls.enableZoom = false;
-    controls.maxPolarAngle = Math.PI / 2;
-    controls.minPolarAngle = Math.PI / 2;
-
-    const earthGroup = new THREE.Group();
-    scene.add(earthGroup);
-    
-    const earthSize = 1.45;
-    let earthMesh;
-    Earth((gltf) => {
-      earthMesh = gltf.scene;
-      earthMesh.scale.set(earthSize, earthSize, earthSize);
-      earthMesh.position.set(earthMesh.position.x +10 , 0, earthMesh.position.z );
-      earthMesh.rotation.set(earthMesh.rotation.x , 0, earthMesh.rotation.z );
-      earthGroup.add(earthMesh);
-    });
-
-    const light = new THREE.DirectionalLight(0xffffff, earthSize);
-    light.position.set(10, 0,0);
-    scene.add(light);
-    
-    const distance = 40;
-    const animate = () => {
-      requestAnimationFrame(animate);
-      if (!earthMesh) return; 
-      // 相机与模型之间的距离
-      const angle = earthGroup.rotation.y +1.5; // 模型的当前旋转角度
-      camera.position.x = Math.sin(angle) * distance  ;
-      camera.position.z = Math.cos(angle) * distance  ; 
-      camera.lookAt(scene.position);
-      earthMesh.rotation.y += rotationSpeed;
-      controls.update();
-      renderer.render(scene, camera);
-    }; 
-
-    animate();
-  let sizeValue = 1.45;
-  const onMouseWheel = (event) => {
-    event.preventDefault();
-    if (!event.ctrlKey) { 
-
-      if (event.deltaY < 0) {
-        // 向上滚动鼠标滚轮时的逻辑
-        sizeValue += 0.1;
-        if (sizeValue > 9.6) {
-          sizeValue = 9.6;
-        }
-      } else {
-        // 向下滚动鼠标滚轮时的逻辑
-        sizeValue -= 0.1;
-        if (sizeValue < 0.1) {
-          sizeValue = 0.1;
-        }
-      }
-    }
-
-    // 更新模型的缩放比例
-    earthMesh.scale.set(sizeValue, sizeValue, sizeValue);
-  };
-
-
-  window.addEventListener("wheel", onMouseWheel, { passive: false });
-  //////////
-
-  const modelPosition = new THREE.Vector3(0, 0, 0);
-  const mouseDownPosition = new THREE.Vector2();
-  const previousMousePosition = new THREE.Vector2();
-
-  function toggleModelMove () {
-    let modelMusicPlayerSign = document.getElementById('musicPlayerSign'); 
-    if (modelMusicPlayerSign.getAttribute("class") == 'signIsOn') {
-      return true;
-    }else {
-      return false;
-    }
-  }
-
-  const button_link = document.querySelector(".nextt_button");
-  let button_link_on = false;
-  button_link.addEventListener('mouseenter', () => {
-    button_link_on =true;
-  });
-
-  button_link.addEventListener('mouseout', () => {
-    button_link_on =false;
-  });
-  const onMouseDown = (event) => { 
-    if (!toggleModelMove() || button_link_on) {
-      event.preventDefault();
-
-      // 记录鼠标按下时的屏幕坐标
-      mouseDownPosition.x = event.clientX;
-      mouseDownPosition.y = event.clientY;
-
-      // 记录模型的当前位置
-      modelPosition.copy(earthMesh.position);
-    }
-  };
-
-  const onMouseMoves = (event) => {
-
-    if (!toggleModelMove() || button_link_on) {
-      event.preventDefault();
-
-      if (event.buttons === 1) {
-        // 获取鼠标移动的距离
-        const movementX = event.clientX - previousMousePosition.x;
-        const movementY = event.clientY - previousMousePosition.y;
-
-        // 根据鼠标移动的距离计算模型的位移
-        const scaleFactor = 0.01;
-        const rotationFactor = 0.005;
-        modelPosition.x += movementX * scaleFactor;
-        modelPosition.y -= movementY * scaleFactor;
-
-        // 更新模型的位置和旋转
-        earthMesh.position.copy(modelPosition);
-        earthMesh.rotation.y += movementX * rotationFactor;
-        earthMesh.rotation.x += movementY * rotationFactor;
-      }
-
-      // 记录鼠标移动时的屏幕坐标
-      previousMousePosition.x = event.clientX;
-      previousMousePosition.y = event.clientY;
-    }
-  };
-
-  const onMouseUp = (event) => {
-    if (!toggleModelMove() || button_link_on) {
-      event.preventDefault();
-
-      // 清空鼠标按下时的坐标和模型位置
-      mouseDownPosition.set(0, 0);
-      modelPosition.set(0, 0, 0);
-    }
-  };
-
-  window.addEventListener("mousedown", onMouseDown, { passive: false });
-  window.addEventListener("mousemove", onMouseMoves, { passive: false });
-  window.addEventListener("mouseup", onMouseUp, { passive: false });
-  };
-  
-        EarthCanvas();
-
-        // 在这里可以开始使用加载完毕的脚本执行其他操作
-      } catch (error) {
-        console.error('Error loading scripts', error);
-      }
-    }
-    
-   
-    
-    /*  const Earth = (onLoad) => {
+   const Earth = (onLoad) => {
         const loader = new THREE.GLTFLoader();        
         loader.load("https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf",onLoad);
        // loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); 
         //loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);
-      };  */
-/*
+    };  
+
       const EarthCanvas = () => {
     const canvasContainer = document.getElementById("canvas-container");
     const rotationSpeed = 0.008; //0.005
@@ -837,10 +573,10 @@
   window.addEventListener("mousedown", onMouseDown, { passive: false });
   window.addEventListener("mousemove", onMouseMoves, { passive: false });
   window.addEventListener("mouseup", onMouseUp, { passive: false });
-  };  */
+  };  
 
-     loadAllPlanetModelScripts();
-   // EarthCanvas(); 
+
+ EarthCanvas(); 
   </script>  
   
   <script>
