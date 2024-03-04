@@ -407,17 +407,32 @@
 
       const threeJsUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/three.min.js";
       const glftLoderUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/gltfLoaders.min.js";
-      const orbitControlUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js"
+      const orbitControlUrl = "https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.2/orbitControls.min.js";
+    
       function planetModelLoadJs(url) {
-        var script = document.createElement('script');
-        script.src = url;
-        script.async = true;
-        document.head.appendChild(script);
+         return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = url;
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
       }
 
-      planetModelLoadJs(threeJsUrl);
-      planetModelLoadJs(glftLoderUrl);
-      planetModelLoadJs(orbitControlUrl);
+    async function loadAllPlanetModelScripts() {
+      try {
+        await planetModelLoadJs(threeJsUrl);
+        await planetModelLoadJs(glftLoderUrl);
+        await planetModelLoadJs(orbitControlUrl);
+        console.log('All scripts loaded successfully');
+        // 在这里可以开始使用加载完毕的脚本执行其他操作
+      } catch (error) {
+        console.error('Error loading scripts', error);
+      }
+    }
+    
+    loadAllPlanetModelScripts();
     
       const Earth = (onLoad) => {
         const loader = new THREE.GLTFLoader();        
