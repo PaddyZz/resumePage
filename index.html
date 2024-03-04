@@ -426,20 +426,27 @@
         await planetModelLoadJs(glftLoderUrl);
         await planetModelLoadJs(orbitControlUrl);
         console.log('All scripts loaded successfully');
+        const Earth = (onLoad) => {
+          const loader = new THREE.GLTFLoader();        
+          loader.load("https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf",onLoad);
+         // loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); 
+          //loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);
+        }; 
+        EarthCanvas();
         // 在这里可以开始使用加载完毕的脚本执行其他操作
       } catch (error) {
         console.error('Error loading scripts', error);
       }
     }
     
-    loadAllPlanetModelScripts();
+   
     
-      const Earth = (onLoad) => {
+    /*  const Earth = (onLoad) => {
         const loader = new THREE.GLTFLoader();        
         loader.load("https://cdn.jsdelivr.net/gh/PaddyZz/threeJS/colorfulPlanet/ver2/scene.gltf",onLoad);
-       /* loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); */
-        /*loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);*/
-      };
+       // loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/ver2/scene.gltf",onLoad); 
+        //loader.load("https://raw.githubusercontent.com/PaddyZz/threeJS/main/colorfulPlanet/scene.gltf",onLoad);
+      };  */
 
       const EarthCanvas = () => {
     const canvasContainer = document.getElementById("canvas-container");
@@ -599,7 +606,9 @@
   window.addEventListener("mousemove", onMouseMoves, { passive: false });
   window.addEventListener("mouseup", onMouseUp, { passive: false });
   };
-  EarthCanvas();
+
+     loadAllPlanetModelScripts();
+   // EarthCanvas(); 
   </script>  
   
   <script>
