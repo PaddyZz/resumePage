@@ -1,5 +1,6 @@
 // sw.js
 
+/*
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNights_avicii.m4a',
@@ -31,3 +32,4 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+*/
