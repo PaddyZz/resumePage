@@ -195,7 +195,7 @@ function loadMusic(song) {
             music.src = musicOneSrcBlobUrl.value;
             preMusicOne.value == musicOneSrcBlobUrl.value;
         } else {
-            
+            console.log("it should be not allowed to generate new blob file with same name here");
         }
         if (preImageOne.value !== imageOneSrcBlobUrl.value) {
             image.src = imageOneSrcBlobUrl.value;
