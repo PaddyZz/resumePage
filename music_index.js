@@ -190,7 +190,7 @@ let preImageOne =  { value: null };
 let preImageTwo =  { value: null };
 
 function loadMusic(song) {
-    if (song.index === '0'){
+    if (song.index == '0'){
         if (preMusicOne.value !== musicOneSrcBlobUrl.value) {
             music.src = musicOneSrcBlobUrl.value;
             preMusicOne.value = musicOneSrcBlobUrl.value;
