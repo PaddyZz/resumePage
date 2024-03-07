@@ -184,13 +184,39 @@ const musicTwoSrcUrl = songs[1].path;
 const imageOneSrcUrl = songs[0].cover;
 const imageTwoSrcUrl = songs[1].cover;
 
+let preMusicOne =  { value: null };
+let preMusicTwo =  { value: null };
+let preImageOne =  { value: null };
+let preImageTwo =  { value: null };
+
 function loadMusic(song) {
     if (song.index == '0'){
-        music.src = musicOneSrcBlobUrl.value;
-        image.src = imageOneSrcBlobUrl.value;
+        if (preMusicOne.value !== musicOneSrcBlobUrl.value) {
+            music.src = musicOneSrcBlobUrl.value;
+            preMusicOne.value == musicOneSrcBlobUrl.value;
+        } else {
+            
+        }
+        if (preImageOne.value !== imageOneSrcBlobUrl.value) {
+            image.src = imageOneSrcBlobUrl.value;
+            preImageOne.value == imageOneSrcBlobUrl.value;
+        } else {
+            
+        }
+        
     } else {
-        music.src = musicTwoSrcBlobUrl.value;
-        image.src = imageTwoSrcBlobUrl.value;
+        if (preMusicTwo.value !== musicTwoSrcBlobUrl.value) {
+            music.src = musicTwoSrcBlobUrl.value;
+            preMusicTwo.value == musicTwoSrcBlobUrl.value;
+        } else {
+            
+        }
+        if (preImageTwo.value !== imageTwoSrcBlobUrl.value) {
+            image.src = imageTwoSrcBlobUrl.value;
+            preImageTwo.value == imageTwoSrcBlobUrl.value;
+        } else {
+            
+        }
     }
     //music.src = song.path;
     title.textContent = song.displayName;
