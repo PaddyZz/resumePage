@@ -190,16 +190,16 @@ let preImageOne =  { value: null };
 let preImageTwo =  { value: null };
 
 function loadMusic(song) {
-    if (song.index == '0'){
+    if (song.index === '0'){
         if (preMusicOne.value !== musicOneSrcBlobUrl.value) {
             music.src = musicOneSrcBlobUrl.value;
-            preMusicOne.value == musicOneSrcBlobUrl.value;
+            preMusicOne.value = musicOneSrcBlobUrl.value;
         } else {
             console.log("it should be not allowed to generate new blob file with same name here");
         }
         if (preImageOne.value !== imageOneSrcBlobUrl.value) {
             image.src = imageOneSrcBlobUrl.value;
-            preImageOne.value == imageOneSrcBlobUrl.value;
+            preImageOne.value = imageOneSrcBlobUrl.value;
         } else {
             
         }
@@ -207,13 +207,13 @@ function loadMusic(song) {
     } else {
         if (preMusicTwo.value !== musicTwoSrcBlobUrl.value) {
             music.src = musicTwoSrcBlobUrl.value;
-            preMusicTwo.value == musicTwoSrcBlobUrl.value;
+            preMusicTwo.value = musicTwoSrcBlobUrl.value;
         } else {
             
         }
         if (preImageTwo.value !== imageTwoSrcBlobUrl.value) {
             image.src = imageTwoSrcBlobUrl.value;
-            preImageTwo.value == imageTwoSrcBlobUrl.value;
+            preImageTwo.value = imageTwoSrcBlobUrl.value;
         } else {
             
         }
