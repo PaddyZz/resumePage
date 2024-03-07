@@ -65,6 +65,7 @@ const songs = [
         /*cover: './src/TheNightsCover.png', */
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/TheNightsCover_scale_ver1.webp',
         artist: 'Avicii',
+        index: '0',
        
     },
     {
@@ -78,6 +79,7 @@ const songs = [
         /*cover: './src/dreamItPossibleCover.png',*/
         cover: 'https://cdn.jsdelivr.net/gh/PaddyZz/resumePage/src/dreamItPossibleCover.webp',
         artist: 'Delacey',
+        index: '1',
         
     },
     
@@ -130,12 +132,13 @@ function pauseMusic() {
     location.hash = "Thank_you_for_listening_music"; 
 }
 
+/*
 function loadMusic(song) {
     music.src = song.path;
     title.textContent = song.displayName;
     artist.textContent = song.artist;
     image.src = song.cover;
-}
+} */
 
 function changeMusic(direction) {
     musicIndex = (musicIndex + direction + songs.length) % songs.length;
@@ -169,6 +172,85 @@ music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
 
+let musicOneSrcBlobUrl =  { value: null };
+let musicTwoSrcBlobUrl =  { value: null };
+let imageOneSrcBlobUrl =  { value: null };
+let imageTwoSrcBlobUrl =  { value: null };
+
+const customLoadEvent = new Event('customLoadEvent');
+// 使用示例
+const musicOneSrcUrl = songs[0].path;
+const musicTwoSrcUrl = songs[1].path;
+const imageOneSrcUrl = songs[0].cover;
+const imageTwoSrcUrl = songs[1].cover;
+
+function loadMusic(song) {
+    if (song.index == '0'){
+        music.src = musicOneSrcBlobUrl.value;
+        image.src = imageOneSrcBlobUrl.value;
+    } else {
+        music.src = musicTwoSrcBlobUrl.value;
+        image.src = imageTwoSrcBlobUrl.value;
+    }
+    //music.src = song.path;
+    title.textContent = song.displayName;
+    artist.textContent = song.artist;
+}
+
+async function fetchAndConvertToBlob(initialUrl) {
+    try {
+        const response = await fetch(initialUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const blob = await response.blob();
+        return blob;
+    } catch (error) {
+        console.error('Error fetching and converting to Blob:', error);
+        return null;
+    }
+}
+
+function handleBlob(blob,blobUrlToBeAssigned) {
+            if (blob) {
+                const blobURL = URL.createObjectURL(blob);
+                console.log('成功获取 Blob 文件:', blobURL);
+                blobUrlToBeAssigned.value = blobURL;
+                // 触发自定义的加载事件 
+                if ((musicOneSrcBlobUrl.value !== null && imageOneSrcBlobUrl.value !== null) ||
+                    (musicTwoSrcBlobUrl.value !== null && imageTwoSrcBlobUrl.value !== null)) {
+                    // 条件成立时的逻辑
+                    document.dispatchEvent(customLoadEvent);
+                }
+                
+            } else {
+                console.log('未能获取 Blob 文件');
+            }
+}
+document.addEventListener('customLoadEvent', function() {
+    console.log('自定义加载事件被触发，可以运行别的程序了');
+    loadMusic(songs[musicIndex]);
+    // 在这里运行您想要执行的其他程序
+});
+
+
+window.addEventListener("load", function() {
+    fetchAndConvertToBlob(musicOneSrcUrl)
+    .then(blob => handleBlob(blob, musicOneSrcBlobUrl));
+    fetchAndConvertToBlob(musicTwoSrcUrl)
+    .then(blob => handleBlob(blob,musicTwoSrcBlobUrl));
+    fetchAndConvertToBlob(imageOneSrcUrl)
+    .then(blob => handleBlob(blob,imageOneSrcBlobUrl));
+    fetchAndConvertToBlob(imageTwoSrcUrl)
+    .then(blob => handleBlob(blob,imageTwoSrcBlobUrl));
+});
+
+
+
+
+
+/*
 function preloadMusic(musicUrl, imageUrl) {
     let audio = new Audio();
     audio.src = musicUrl;
@@ -186,6 +268,6 @@ preloadMusic(songs[0].path,songs[0].cover);
 preloadMusic(songs[1].path,songs[1].cover); 
 
 
-loadMusic(songs[musicIndex]);
+loadMusic(songs[musicIndex]); */
 
 
