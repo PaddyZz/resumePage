@@ -303,10 +303,10 @@
 
 
   <script type="module">
-    import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
+  //  import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
 
-    const canvas = document.getElementById('totoro-fox-canvas');
-    const app = new Application(canvas);
+  //  const canvas = document.getElementById('totoro-fox-canvas');
+  //  const app = new Application(canvas);
     /*https://cdn.jsdelivr.net/npm/paddyzz-pkg-for-spline-3d-models@1.0.4/scene.splinecode*/
    /* https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode */
     const fileUrl = 'https://draft.spline.design/3eO-oLqxM1ExhLVI/scene.splinecode';
@@ -365,8 +365,15 @@
     }
 
     // 初始化请求第一块数据
-    fetchDataChunk();
-
+     window.addEventListener("load", function() {
+       setTimeout(() => {
+          import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
+          const canvas = document.getElementById('totoro-fox-canvas');
+          const app = new Application(canvas);
+          fetchDataChunk();
+        }, 50000);
+    });
+    
 </script> 
  
  <!-- 
