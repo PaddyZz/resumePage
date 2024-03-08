@@ -363,16 +363,20 @@
                 }
             });
     }
-
-    // 初始化请求第一块数据
-     window.addEventListener("load", function() {
-       setTimeout(() => {
-          import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
-          const canvas = document.getElementById('totoro-fox-canvas');
-          const app = new Application(canvas);
-          fetchDataChunk();
-        }, 50000);
-    });
+   // fetchDataChunk();
+    
+   window.addEventListener("load", function() {
+    setTimeout(() => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
+        script.onload = () => {
+            const canvas = document.getElementById('totoro-fox-canvas');
+            const app = new Application(canvas);
+            fetchDataChunk();
+        };
+        document.body.appendChild(script);
+    }, 50000);
+});
     
 </script> 
  
