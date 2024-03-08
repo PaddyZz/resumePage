@@ -366,10 +366,10 @@
    // fetchDataChunk();
 
   import { Application } from 'https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.0.53/build/runtime.min.js';
-
+  const canvas = document.getElementById('totoro-fox-canvas');
+  const app = new Application(canvas);
  window.addEventListener("load", function() {
-       const canvas = document.getElementById('totoro-fox-canvas');
-      const app = new Application(canvas);
+       
        setTimeout(() => {
           fetchDataChunk();
         }, 5000);
