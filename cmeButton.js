@@ -45,8 +45,8 @@ $('.button--bubble').each(function() {
     });
 });
 
-
-    window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
+//window.addEventListener("DOMContentLoaded", function() {
   function applyButtonHoverEffect() {
     const cmeButton = document.querySelector('a.cmebutton');
     const myElement = document.querySelector('a.cmebutton.button--bubble');
