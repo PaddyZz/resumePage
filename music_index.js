@@ -184,44 +184,18 @@ const musicTwoSrcUrl = songs[1].path;
 const imageOneSrcUrl = songs[0].cover;
 const imageTwoSrcUrl = songs[1].cover;
 
-let preMusicOne =  { value: null };
-let preMusicTwo =  { value: null };
-let preImageOne =  { value: null };
-let preImageTwo =  { value: null };
-
 function loadMusic(song) {
     if (song.index == '0'){
-        if (preMusicOne.value !== musicOneSrcBlobUrl.value) {
-            music.src = musicOneSrcBlobUrl.value;
-            preMusicOne.value = musicOneSrcBlobUrl.value;
-        } else {
-            console.log("it should be not allowed to generate new blob file with same name here");
-        }
-        if (preImageOne.value !== imageOneSrcBlobUrl.value) {
-            image.src = imageOneSrcBlobUrl.value;
-            preImageOne.value = imageOneSrcBlobUrl.value;
-        } else {
-            
-        }
-        
+        music.src = musicOneSrcBlobUrl.value ;
+        image.src = imageOneSrcBlobUrl.value;
     } else {
-        if (preMusicTwo.value !== musicTwoSrcBlobUrl.value) {
-            music.src = musicTwoSrcBlobUrl.value;
-            preMusicTwo.value = musicTwoSrcBlobUrl.value;
-        } else {
-            
-        }
-        if (preImageTwo.value !== imageTwoSrcBlobUrl.value) {
-            image.src = imageTwoSrcBlobUrl.value;
-            preImageTwo.value = imageTwoSrcBlobUrl.value;
-        } else {
-            
-        }
+        music.src = musicTwoSrcBlobUrl.value;
+        image.src = imageTwoSrcBlobUrl.value;
     }
     //music.src = song.path;
     title.textContent = song.displayName;
     artist.textContent = song.artist;
-}
+} 
 
 async function fetchAndConvertToBlob(initialUrl) {
     try {
@@ -239,21 +213,22 @@ async function fetchAndConvertToBlob(initialUrl) {
 }
 
 function handleBlob(blob,blobUrlToBeAssigned) {
-            if (blob) {
-                const blobURL = URL.createObjectURL(blob);
-                console.log('成功获取 Blob 文件:', blobURL);
-                blobUrlToBeAssigned.value = blobURL;
-                // 触发自定义的加载事件 
-                if ((musicOneSrcBlobUrl.value !== null && imageOneSrcBlobUrl.value !== null) ||
-                    (musicTwoSrcBlobUrl.value !== null && imageTwoSrcBlobUrl.value !== null)) {
-                    // 条件成立时的逻辑
-                    document.dispatchEvent(customLoadEvent);
-                }
-                
-            } else {
-                console.log('未能获取 Blob 文件');
-            }
+    if (blob) {
+        const blobURL = URL.createObjectURL(blob);
+        console.log('成功获取 Blob 文件:', blobURL);
+        blobUrlToBeAssigned.value = blobURL;
+        // 触发自定义的加载事件 
+        if ((musicOneSrcBlobUrl.value !== null && imageOneSrcBlobUrl.value !== null) ||
+            (musicTwoSrcBlobUrl.value !== null && imageTwoSrcBlobUrl.value !== null)) {
+            // 条件成立时的逻辑
+            document.dispatchEvent(customLoadEvent);
+        }
+        
+    } else {
+        console.log('未能获取 Blob 文件');
+    }
 }
+
 document.addEventListener('customLoadEvent', function() {
     console.log('自定义加载事件被触发，可以运行别的程序了');
     loadMusic(songs[musicIndex]);
@@ -271,8 +246,6 @@ window.addEventListener("load", function() {
     fetchAndConvertToBlob(imageTwoSrcUrl)
     .then(blob => handleBlob(blob,imageTwoSrcBlobUrl));
 });
-
-
 
 
 
