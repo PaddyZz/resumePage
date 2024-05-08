@@ -15,7 +15,7 @@ setTimeout(function() {
   var typedOne = new Typed(".spanBioOne", optionBioOne);
 
   setTimeout(function() {
-    var textBioTwo = "machine learning and reinforcement learning, web3 and";
+    var textBioTwo = "machine learning and reinforcement learning, web3 & ";
     var optionBioTwo = {
       strings: ["",textBioTwo], // 将文本作为一个字符串传递给 Typed.js
       typeSpeed: 45,
