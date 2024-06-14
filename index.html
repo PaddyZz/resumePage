@@ -50,6 +50,8 @@
   <link rel="stylesheet" type="text/css" href="./loadAnim.css" /> 
   <link rel="stylesheet" type="text/css" href="./largeTextStyle.css" /> 
   <link rel="stylesheet" type="text/css" href="./svg-ufo-fire.css"/> 
+  <link rel="stylesheet" type="text/css" href="./circleStarSvg-style.css"/>
+  <link rel="stylesheet" type="text/css" href="./glowing_anim.css"/>
   
 </head>
 <body>
@@ -65,7 +67,7 @@
     <div id="canvas-container"></div>
     <div>
       <div class="text-box">
-        <h1 class="main-text">H<span class="letterI">i</span>, <span class="letterCapI">I</span> am <span class="dynamic-text name">Jiahe</span> ZHAO, <br> and my focus <span class="bouncingLetter">l</span>s <span class="dynamic-text focus">AI ML</span>. <br> My hobbies are <br><span class="dynamic-text hobby">frontendDev</span> <span class="word_and"> & </span> <br><span class="dynamic-text hobby">watching stars</span>.</h1>
+        <h1 class="main-text">H<span class="letterI">i</span>, <span class="letterCapI">I</span> am <span class="dynamic-text name">Jiahe</span> ZHAO, <br> and my focus <span class="bouncingLetter">l</span>s <span class="dynamic-text focus">AI ML</span>. <br> My hobbies are <br><span class="dynamic-text hobby">watching stars</span> <span class="word_and"> & </span> <br><span class="dynamic-text hobby">collecting scenic pics</span>.</h1>
         <svg class="svgTextAnim"viewBox="0 0 137 135" fill= "none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
           <path  d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z" fill="url(#paint0_linear_1655_45397)"></path>
           <path  d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z" fill="url(#pattern-home-hero-windmill-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
@@ -85,8 +87,8 @@
       </div>
       <div>
         <span class="spanBio spanBioOne">I enjoy doing developments in Artificial Intelligence</span>
-        <span class="spanBio spanBioTwo">machine learning and reinforcement learning, web3 & </span>
-        <span class="spanBio spanBioThree">unix-like OS. And I am always eager to learn and explore</span>
+        <span class="spanBio spanBioTwo">machine learning and deep learning in NLP and </span>
+        <span class="spanBio spanBioThree">CV. And I am consistently willing to learn and explore</span>
         <span class="spanBio spanBioFour">new technologies to develop amazing online experiences...</span>
       </div>
     </div>
@@ -195,36 +197,59 @@
     </div>
 
     <div class = "button-container" style="position:absolute; top:400px; left:-100px; z-index: 1;">
-      <a class = "nextt_button" href="https://paddyzz.github.io/" onmouseover="startAnimation()" onmouseout="stopAnimation()" >
-      <!--  <img class="circle-star-img" src="src/circleStar.png" width="250" height="250" style="position: relative; top: -100px; right: 60px;"> -->
-       <svg class=""circle-star-img" width="300" height="296" viewbox="0 0 296 300" style="transform: scale(0.9); position: relative; top: -100px; right: 60px;" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0">
+      <a class = "nextt_button" href="https://paddyzz.github.io/"  >
+        <svg class="circle-star-img" width="300" height="296" viewbox="0 0 296 300" style="margin-top:-145px;margin-left:-145px;transform: scale(1.1); " xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0">
+          <g class="layer">
+          <title>Layer 1</title>
+          <g fill="#ffde81" class="circle-star-svg" id="svg_1" transform="translate(0 296) matrix(0.05 0 0 -0.05 0 0)">
+          
+            <path d="m2621,5408c-2,-65 -74,-143 -146,-160l-65,-14l70,-18c79,-20 140,-81 140,-139c0,-22 9,-34 20,-27c11,7 20,29 20,50c0,46 90,120 148,121c29,1 19,11 -35,33c-58,24 -86,53 -114,114c-26,58 -37,70 -38,40z" id="svg_7"/>
+            <path d="m1753,4770c-36,-27 -36,-28 0,-65c35,-36 39,-37 70,-3c49,51 -12,110 -70,68z" id="svg_13"/>
+            <path d="m123,3789c-12,-27 -42,-57 -65,-66c-42,-15 -41,-16 11,-50c29,-20 61,-55 71,-79c13,-32 18,-35 19,-10c0,18 30,56 66,84c48,38 56,52 30,52c-20,0 -52,27 -72,60l-37,60l-23,-51z" id="svg_20"/>
+          
+            <path d="m5233,3201c-9,-47 -28,-70 -73,-87c-73,-28 -76,-46 -9,-63c33,-8 62,-36 79,-77l27,-64l19,51c23,60 59,92 114,103c35,7 32,11 -20,37c-33,16 -74,60 -92,97l-32,68l-13,-65z" id="svg_22"/>
+  
+            <path d="m5851,2430c-28,-81 -46,-100 -106,-119l-61,-18l63,-32c35,-17 75,-57 91,-89l27,-58l26,61c14,34 46,73 71,86l44,24l-54,32c-29,18 -61,60 -70,93c-15,53 -18,55 -31,20z" id="svg_26"/>
+  
+          
+            <path d="m3247,1201c-16,-41 -45,-69 -88,-84l-64,-23l63,-26c34,-14 73,-50 86,-78l24,-53l27,53c15,29 55,65 89,79l61,25l-62,22c-40,14 -71,44 -87,84l-26,63l-23,-62z" id="svg_34"/>
+    
+            <path d="m720,1100c0,-25 -23,-55 -58,-75c-57,-33 -57,-34 -15,-55c23,-11 52,-41 64,-65c22,-44 22,-44 66,15c24,33 60,60 79,60c22,0 11,14 -31,40c-36,22 -65,53 -65,69c0,16 -9,34 -20,41c-11,7 -20,-7 -20,-30z" id="svg_36"/>
+  
+            <path d="m1325,598c-14,-38 -45,-69 -83,-83l-61,-23l60,-25c34,-15 71,-52 86,-86l25,-60l22,60c14,36 47,70 84,85l61,26l-60,22c-36,14 -70,47 -85,84l-26,61l-23,-61z" id="svg_39"/>
+  
+          </g>
+          </g>
+        </svg> 
+        <div style="position:relative;top:-300px">
+          <svg class="circle-star-img-one" width="300" height="296" viewbox="0 0 296 300" style="margin-left:-145px;transform: scale(1.1); position: relative; " xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" version="1.0">
             <g class="layer">
-             <title>Layer 1</title>
-             <g fill="#ffde81" id="svg_1" transform="translate(0 296) matrix(0.05 0 0 -0.05 0 0)">
+            <title>Layer 1</title>
+            <g fill="transparent"  class="circle-star-svg-one" id="svg_1" transform="translate(0 296) matrix(0.05 0 0 -0.05 0 0)">
               <path d="m3188,5889c1997,-272 3040,-2557 1926,-4219c-1167,-1742 -3775,-1572 -4713,307c-161,322 -281,779 -281,1067c0,64 -7,116 -15,116c-27,0 10,-446 52,-620c507,-2131 3136,-2880 4673,-1332c1344,1354 980,3599 -720,4448c-315,157 -726,266 -987,262l-133,-2l198,-27z" id="svg_2"/>
               <path d="m2274,5787c-29,-28 -13,-67 27,-67c28,0 40,11 35,33c-7,37 -41,56 -62,34z" id="svg_4"/>
               <path d="m2633,5616c-1529,-116 -2567,-1633 -2139,-3126c415,-1450 2063,-2181 3419,-1518c290,142 630,402 752,576c24,34 -33,-9 -126,-95c-1566,-1450 -4059,-396 -4059,1717c0,1924 2133,3050 3746,1977c243,-162 272,-156 50,9c-465,346 -1039,507 -1643,460z" id="svg_5"/>
               <path d="m3799,5588c-37,-44 10,-88 50,-47c23,24 23,33 1,53c-21,19 -32,18 -51,-6z" id="svg_6"/>
-              <path d="m2621,5408c-2,-65 -74,-143 -146,-160l-65,-14l70,-18c79,-20 140,-81 140,-139c0,-22 9,-34 20,-27c11,7 20,29 20,50c0,46 90,120 148,121c29,1 19,11 -35,33c-58,24 -86,53 -114,114c-26,58 -37,70 -38,40z" id="svg_7"/>
+
               <path d="m3162,5413c-17,-21 -16,-33 5,-51c21,-17 33,-16 51,5c17,21 16,33 -5,51c-21,17 -33,16 -51,-5z" id="svg_8"/>
               <path d="m1004,5208c-22,-24 -21,-34 3,-58c25,-25 32,-25 54,2c38,45 -18,99 -57,56z" id="svg_9"/>
               <path d="m3494,5127c-24,-23 -16,-82 13,-93c40,-15 78,16 70,58c-8,39 -58,60 -83,35z" id="svg_10"/>
               <path d="m5084,5068c-42,-46 14,-93 66,-56c20,15 33,30 29,33c-5,4 -22,16 -39,29c-23,17 -36,15 -56,-6z" id="svg_11"/>
               <path d="m559,4773c-47,-65 17,-130 69,-70c30,35 30,41 -3,76c-34,36 -36,36 -66,-6z" id="svg_12"/>
-              <path d="m1753,4770c-36,-27 -36,-28 0,-65c35,-36 39,-37 70,-3c49,51 -12,110 -70,68z" id="svg_13"/>
+              
               <path d="m4640,4771c0,-15 -17,-34 -37,-40c-35,-11 -34,-16 15,-69c46,-51 54,-53 65,-23c8,20 28,41 45,48c26,10 23,20 -19,62c-58,59 -69,62 -69,22z" id="svg_14"/>
               <path d="m1150,4436c-11,-25 -39,-55 -63,-66c-42,-21 -42,-22 13,-54c31,-18 60,-53 65,-79c8,-47 8,-47 31,7c12,30 46,66 76,82l54,28l-53,13c-29,8 -53,21 -53,30c0,54 -51,83 -70,39z" id="svg_15"/>
               <path d="m333,4225c-6,-9 -3,-29 6,-44c21,-33 88,-11 76,24c-10,30 -67,44 -82,20z" id="svg_16"/>
               <path d="m11,4047c-18,-48 20,-79 58,-47c24,19 26,32 9,53c-30,36 -51,34 -67,-6z" id="svg_17"/>
               <path d="m5010,4030c-40,-40 -40,-40 0,-80c40,-40 40,-40 80,0c40,40 40,40 0,80c-40,40 -40,40 -80,0z" id="svg_18"/>
               <path d="m1031,3921c-18,-28 4,-61 42,-61c17,0 27,14 23,33c-7,41 -47,57 -65,28z" id="svg_19"/>
-              <path d="m123,3789c-12,-27 -42,-57 -65,-66c-42,-15 -41,-16 11,-50c29,-20 61,-55 71,-79c13,-32 18,-35 19,-10c0,18 30,56 66,84c48,38 56,52 30,52c-20,0 -52,27 -72,60l-37,60l-23,-51z" id="svg_20"/>
+
               <path d="m746,3468c-31,-34 -36,-48 -16,-48c15,0 36,-15 46,-33c17,-29 22,-29 58,7c38,38 38,41 5,83c-42,51 -37,51 -93,-9z" id="svg_21"/>
-              <path d="m5233,3201c-9,-47 -28,-70 -73,-87c-73,-28 -76,-46 -9,-63c33,-8 62,-36 79,-77l27,-64l19,51c23,60 59,92 114,103c35,7 32,11 -20,37c-33,16 -74,60 -92,97l-32,68l-13,-65z" id="svg_22"/>
+
               <path d="m5839,3048c-37,-44 10,-88 50,-47c23,24 23,33 1,53c-21,19 -32,18 -51,-6z" id="svg_23"/>
               <path d="m641,2761c-38,-24 -16,-91 29,-91c26,0 42,15 46,42c7,47 -35,73 -75,49z" id="svg_24"/>
               <path d="m4748,2457c-10,-17 -36,-41 -58,-53c-34,-19 -35,-23 -6,-23c19,-1 45,-20 57,-43l22,-42l40,42c21,23 49,42 63,43c13,0 6,11 -16,23c-22,13 -50,36 -62,53c-20,26 -24,26 -40,0z" id="svg_25"/>
-              <path d="m5851,2430c-28,-81 -46,-100 -106,-119l-61,-18l63,-32c35,-17 75,-57 91,-89l27,-58l26,61c14,34 46,73 71,86l44,24l-54,32c-29,18 -61,60 -70,93c-15,53 -18,55 -31,20z" id="svg_26"/>
+
               <path d="m5134,2327c-34,-34 -14,-90 31,-83c29,4 45,20 45,46c0,39 -49,64 -76,37z" id="svg_27"/>
               <path d="m800,2271c-40,-49 30,-109 75,-65c26,26 27,37 6,63c-32,39 -49,39 -81,2z" id="svg_28"/>
               <path d="m1182,1932c-19,-22 -19,-40 -3,-71c39,-71 129,-40 118,41c-8,57 -78,75 -115,30z" id="svg_29"/>
@@ -232,20 +257,28 @@
               <path d="m4400,1829c0,-17 -26,-46 -58,-64c-57,-33 -57,-34 -15,-55c24,-11 52,-41 63,-65c11,-25 24,-45 30,-45c6,0 19,20 30,45c11,24 39,54 63,65c42,21 42,22 -15,55c-32,18 -58,47 -58,64c0,17 -9,31 -20,31c-11,0 -20,-14 -20,-31z" id="svg_31"/>
               <path d="m2041,1576c-1,-19 -28,-55 -61,-79c-59,-44 -59,-44 -15,-66c24,-12 54,-41 65,-64c21,-42 22,-42 55,15c21,37 50,58 79,59c44,1 44,2 -9,30c-30,17 -67,54 -84,84c-20,39 -30,45 -30,21z" id="svg_32"/>
               <path d="m1613,1418c-51,-59 14,-115 72,-63c25,22 29,36 13,46c-12,8 -29,24 -36,36c-9,15 -26,8 -49,-19z" id="svg_33"/>
-              <path d="m3247,1201c-16,-41 -45,-69 -88,-84l-64,-23l63,-26c34,-14 73,-50 86,-78l24,-53l27,53c15,29 55,65 89,79l61,25l-62,22c-40,14 -71,44 -87,84l-26,63l-23,-62z" id="svg_34"/>
+
               <path d="m3674,1227c-24,-23 -16,-82 13,-93c40,-15 78,16 70,58c-8,39 -58,60 -83,35z" id="svg_35"/>
-              <path d="m720,1100c0,-25 -23,-55 -58,-75c-57,-33 -57,-34 -15,-55c23,-11 52,-41 64,-65c22,-44 22,-44 66,15c24,33 60,60 79,60c22,0 11,14 -31,40c-36,22 -65,53 -65,69c0,16 -9,34 -20,41c-11,7 -20,-7 -20,-30z" id="svg_36"/>
+
               <path d="m2310,1060c-24,-39 20,-87 48,-52c26,30 15,72 -18,72c-10,0 -23,-9 -30,-20z" id="svg_37"/>
               <path d="m1083,827c9,-44 67,-50 67,-7c0,16 -17,33 -37,37c-27,5 -35,-3 -30,-30z" id="svg_38"/>
-              <path d="m1325,598c-14,-38 -45,-69 -83,-83l-61,-23l60,-25c34,-15 71,-52 86,-86l25,-60l22,60c14,36 47,70 84,85l61,26l-60,22c-36,14 -70,47 -85,84l-26,61l-23,-61z" id="svg_39"/>
+
               <path d="m4087,450c-16,-43 6,-90 43,-90c42,0 60,54 30,90c-32,38 -58,38 -73,0z" id="svg_40"/>
               <path d="m3725,397c-17,-17 -15,-30 6,-51c25,-25 33,-25 58,0c27,27 8,74 -29,74c-7,0 -22,-10 -35,-23z" id="svg_41"/>
               <path d="m3372,271c-9,-34 -36,-63 -76,-80c-60,-25 -61,-27 -18,-40c25,-8 61,-42 81,-75c36,-58 38,-58 51,-17c7,24 40,60 73,80l59,36l-52,13c-33,8 -62,36 -78,75l-26,62l-14,-54z" id="svg_42"/>
-             </g>
             </g>
-        </svg> 
-        <img class="rounded-text-img" src="src/rounded-text.png" width="120" height="120" style="position: relative; top: -293px; right: 3px;">
-       <!-- <div id="target"></div> -->
+            </g>
+          </svg> 
+
+          <div class="container">
+            <div class="half"></div>
+            
+            <div class="half"></div>
+          </div>
+        
+          <img class="rounded-text-img" src="src/rounded-text.webp" width="120" height="120" style="top: -165px;margin-left:-55px;scale:1.3;position: relative;">
+           <div id="target"></div> 
+        </div>
       </a>
     </div>
     <div class="totoro-fox"> 
@@ -385,7 +418,7 @@
             })
             .then(blobDataBlock => {
                 // 保存获取到的 Blob 数据块
-                console.log(blobDataBlock);
+                
                 blobChunks.push(blobDataBlock);
 
                 // 更新下一块数据的范围
@@ -395,7 +428,7 @@
                 if (startByte >= totalFileSize) {
                     continueFetching = false;
                     if (!continueFetching) {
-                      console.log('文件已全部加载完成');
+                     
                       // 将所有 Blob 数据块拼接成一个 Blob 对象
                       const blob = new Blob(blobChunks, { type: 'application/octet-stream' });
                       // 将 Blob 数据转换成 Blob URL
@@ -424,8 +457,7 @@
     
 </script> 
  
- <!-- 
-  //nextButton
+
   <script>
     function loadIcon() {
     // 动态创建一个 <i> 元素
@@ -443,7 +475,7 @@
     loadIcon();
 
   </script>
-  -->
+  
   
   <!--  //nextButton
   <script>
@@ -605,13 +637,14 @@
         // 根据鼠标移动的距离计算模型的位移
         const scaleFactor = 0.01;
         const rotationFactor = 0.005;
-        modelPosition.x += movementX * scaleFactor;
+        //modelPosition.x += movementX * scaleFactor;
         modelPosition.y -= movementY * scaleFactor;
-
+        modelPosition.z -= movementX * scaleFactor;
         // 更新模型的位置和旋转
         earthMesh.position.copy(modelPosition);
         earthMesh.rotation.y += movementX * rotationFactor;
         earthMesh.rotation.x += movementY * rotationFactor;
+        earthMesh.rotation.z += movementX * rotationFactor; 
       }
 
       // 记录鼠标移动时的屏幕坐标
@@ -868,21 +901,8 @@
   /*WebAssembly.compileStreaming(fetch('https://unpkg.com/paddyzz-pkg-for-spline-3d-models@1.0.3/draco_decoder.wasm')); */
 </script>
 
- 
+<script src='./circleStarSvg-style.js'></script>
 <script src="./music_index.js"></script>
- <!-- 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(registration => {
-          /*console.log('Service Worker 注册成功:', registration);*/
-        })
-        .catch(error => {
-          /*console.log('Service Worker 注册失败:', error);*/
-        });
-    });
-  }
-  </script> -->
+
 </body>
 </html>

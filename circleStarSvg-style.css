@@ -1,0 +1,93 @@
+.circle-star-img g{
+    opacity: 1;
+    fill: transparent; 
+   /* fill:rgb(255, 222, 129);*/
+    /*user-select: none; */
+}
+
+.button-container:hover .rounded-text-img{
+    user-select: none;
+    animation: rotate 0.25s infinite linear forwards; 
+}
+
+.button-container:hover .custom-icon
+{
+    animation: colorchanger 2s  linear forwards;
+}
+
+.circle-star-svg-one.mouseEnter {
+    fill:rgb(255, 222, 129);
+    /*animation: beforeFade 2s linear forwards, fadeX 3s linear infinite forwards;*/
+    animation: fadeX 3s ease-in infinite forwards;
+   
+}
+
+.circle-star-svg-one.mouseLeave {
+    fill:rgb(255, 222, 129);
+    /*animation: beforeFade 2s linear forwards, fadeX 3s linear infinite forwards;*/
+    animation: fadeReverse 1s linear forwards;
+   /* opacity: var(--path-opacity);*/
+   
+}
+
+
+@keyframes fadeX {
+    0%{
+
+        opacity:0;
+    } 
+    50% {
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100% {
+        
+        opacity:0;
+    }
+}
+
+@keyframes fadeReverse {
+   
+    to{
+        opacity: 0;
+    }
+}
+
+
+
+
+.circleStarSvgAnim-stars-class {
+    animation: circleStarSvgAnim-stars 2s forwards linear;
+   
+}
+
+.circleStarSvgAnim-stars-dissolve-class {
+    animation: circleStarSvgAnim-stars-dissolve 2s forwards linear;
+   
+}
+
+@keyframes circleStarSvgAnim-stars {
+
+    0%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes circleStarSvgAnim-stars-dissolve {
+
+    0%{
+        opacity: 1;
+    }
+    
+    100%{
+        opacity: 0;
+    }
+}

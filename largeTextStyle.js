@@ -12,9 +12,9 @@
       // 定义要切换的文本内容
       var texts = [
         ["Jiahe", "Paddy"],
-        ["AI ML", "AI RL"],
-        ["frontendDev","biking-tour"],
-        ["watching stars","listening music"]
+        ["AI ML", "AI DL"],
+        ["watching stars","jogging, bike riding"],
+        ["collecting scenic pics","listening to music"]
       ];
 
       // 设置定时器，每隔1.5秒执行一次切换

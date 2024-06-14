@@ -207,7 +207,7 @@ async function fetchAndConvertToBlob(initialUrl) {
         const blob = await response.blob();
         return blob;
     } catch (error) {
-        console.error('Error fetching and converting to Blob:', error);
+        
         return null;
     }
 }
@@ -215,7 +215,7 @@ async function fetchAndConvertToBlob(initialUrl) {
 function handleBlob(blob,blobUrlToBeAssigned) {
     if (blob) {
         const blobURL = URL.createObjectURL(blob);
-        console.log('成功获取 Blob 文件:', blobURL);
+        
         blobUrlToBeAssigned.value = blobURL;
         // 触发自定义的加载事件 
         if ((musicOneSrcBlobUrl.value !== null && imageOneSrcBlobUrl.value !== null) ||
@@ -225,12 +225,12 @@ function handleBlob(blob,blobUrlToBeAssigned) {
         }
         
     } else {
-        console.log('未能获取 Blob 文件');
+        
     }
 }
 
 document.addEventListener('customLoadEvent', function() {
-    console.log('自定义加载事件被触发，可以运行别的程序了');
+    
     loadMusic(songs[musicIndex]);
     // 在这里运行您想要执行的其他程序
 });

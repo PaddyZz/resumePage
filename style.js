@@ -15,7 +15,7 @@ setTimeout(function() {
   var typedOne = new Typed(".spanBioOne", optionBioOne);
 
   setTimeout(function() {
-    var textBioTwo = "machine learning and reinforcement learning, web3 ";
+    var textBioTwo = "machine learning and deep learning in NLP and ";
     var optionBioTwo = {
       strings: ["",textBioTwo], // 将文本作为一个字符串传递给 Typed.js
       typeSpeed: 45,
@@ -27,7 +27,7 @@ setTimeout(function() {
     var typedTwo = new Typed(".spanBioTwo", optionBioTwo);
 
     setTimeout(function() {
-      var textBioThree = "Unix-like OS. And I am always eager to learn and explore";
+      var textBioThree = "CV. And I am consistently willing to learn and explore";
       var optionBioThree = {
         strings: ["",textBioThree], // 将文本作为一个字符串传递给 Typed.js
         typeSpeed: 45,
