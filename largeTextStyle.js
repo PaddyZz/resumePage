@@ -36,7 +36,7 @@
             
             word_and_one.style.display = 'inline';
           }else {
-            if (word_and_one.style.display !== 'none) {
+            if (word_and_one.style.display !== 'none') {
                 word_and_one.style.display ='none';
               }
             word_and.style.display = 'inline';
