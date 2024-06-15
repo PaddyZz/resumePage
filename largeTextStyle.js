@@ -2,6 +2,8 @@
     document.addEventListener("DOMContentLoaded", function() {
       // 获取文本节点和初始文本内容
       var dynamicTexts = document.querySelectorAll(".dynamic-text");
+      var word_and= document.getElementsByClassName('word_and')[0];
+      var word_and_one = document.getElementsByClassName('word_and_one')[0];
       var initialTexts = [];
 
       // 保存初始文本内容
@@ -13,7 +15,7 @@
       var texts = [
         ["Jiahe", "Paddy"],
         ["AI ML", "AI DL"],
-        ["watching stars","jogging, bike riding"],
+        ["watching stars","jogging, bike-riding"],
         ["collecting scenic pics","listening to music"]
       ];
 
@@ -29,6 +31,15 @@
 
           // 更新文本内容
           textElement.innerHTML = nextText;
+          if (nextText === texts[index][1]) {
+            word_and.style.display ='none';
+            console.log(word_and);
+            word_and_one.style.display = 'inline';
+          }else {
+            word_and_one.style.display ='none';
+            console.log(word_and_one);
+            word_and.style.display = 'inline';
+          }
         });
       }, 2500);
     });
