@@ -33,11 +33,12 @@
           textElement.innerHTML = nextText;
           if (nextText === texts[index][1]) {
             word_and.style.display ='none';
-            console.log(word_and);
+            
             word_and_one.style.display = 'inline';
           }else {
-            word_and_one.style.display ='none';
-            console.log(word_and_one);
+            if (word_and_one.style.display !== 'none) {
+                word_and_one.style.display ='none';
+              }
             word_and.style.display = 'inline';
           }
         });
