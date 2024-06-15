@@ -4,6 +4,7 @@
       var dynamicTexts = document.querySelectorAll(".dynamic-text");
       var word_and= document.getElementsByClassName('word_and')[0];
       var word_and_one = document.getElementsByClassName('word_and_one')[0];
+      word_and_one.style.display = 'none';
       var initialTexts = [];
 
       // 保存初始文本内容
