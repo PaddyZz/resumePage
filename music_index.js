@@ -132,13 +132,6 @@ function pauseMusic() {
     location.hash = "Thank_you_for_listening_music"; 
 }
 
-/*
-function loadMusic(song) {
-    music.src = song.path;
-    title.textContent = song.displayName;
-    artist.textContent = song.artist;
-    image.src = song.cover;
-} */
 
 function changeMusic(direction) {
     musicIndex = (musicIndex + direction + songs.length) % songs.length;
@@ -178,7 +171,6 @@ let imageOneSrcBlobUrl =  { value: null };
 let imageTwoSrcBlobUrl =  { value: null };
 
 const customLoadEvent = new Event('customLoadEvent');
-// 使用示例
 const musicOneSrcUrl = songs[0].path;
 const musicTwoSrcUrl = songs[1].path;
 const imageOneSrcUrl = songs[0].cover;
@@ -217,10 +209,8 @@ function handleBlob(blob,blobUrlToBeAssigned) {
         const blobURL = URL.createObjectURL(blob);
         
         blobUrlToBeAssigned.value = blobURL;
-        // 触发自定义的加载事件 
         if ((musicOneSrcBlobUrl.value !== null && imageOneSrcBlobUrl.value !== null) ||
             (musicTwoSrcBlobUrl.value !== null && imageTwoSrcBlobUrl.value !== null)) {
-            // 条件成立时的逻辑
             document.dispatchEvent(customLoadEvent);
         }
         
@@ -232,9 +222,34 @@ function handleBlob(blob,blobUrlToBeAssigned) {
 document.addEventListener('customLoadEvent', function() {
     
     loadMusic(songs[musicIndex]);
-    // 在这里运行您想要执行的其他程序
+
 });
 
+function resumeBtnHoverStyle(){
+    const gradientBox = document.getElementsByClassName('button_inner q')[0];
+    let gradientBox_hover = false;
+    let angle = 270;
+    const colors = ['#743ad5', '#d53a9d'];
+    gradientBox.addEventListener('mouseenter', function() {
+
+        gradientBox_hover = true;
+    });
+   
+    gradientBox.addEventListener('mouseleave', function() {
+        gradientBox.style.background = 'none';
+        gradientBox_hover = false;
+    });
+
+    setInterval(()=>{
+        if(gradientBox_hover) {
+            if (angle === 360) {
+                angle = 45;
+            }
+            angle += 45; 
+            gradientBox.style.background = `linear-gradient(${angle}deg, ${colors.join(', ')})`;
+        }
+    },100);
+}
 
 window.addEventListener("load", function() {
     fetchAndConvertToBlob(musicOneSrcUrl)
@@ -245,28 +260,9 @@ window.addEventListener("load", function() {
     .then(blob => handleBlob(blob,imageOneSrcBlobUrl));
     fetchAndConvertToBlob(imageTwoSrcUrl)
     .then(blob => handleBlob(blob,imageTwoSrcBlobUrl));
+    resumeBtnHoverStyle();
 });
 
 
-
-/*
-function preloadMusic(musicUrl, imageUrl) {
-    let audio = new Audio();
-    audio.src = musicUrl;
-    audio.load();
-    let img = new Image();
-    img.onload = function() {
-        if (img.complete) {
-            
-        }
-    };
-    img.src = imageUrl;
-}
-
-preloadMusic(songs[0].path,songs[0].cover);
-preloadMusic(songs[1].path,songs[1].cover); 
-
-
-loadMusic(songs[musicIndex]); */
 
 
