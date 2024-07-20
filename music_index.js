@@ -33,9 +33,9 @@ function ctlPlayerSign() {
         toggleSign = false;
         setTimeout(()=> {
     
-            musicContainer.style.display = "none";
-            title.style.display = "none";
-            artist.style.display = "none";
+            musicContainer.style.opacity = "0";
+            title.style.opacity = "0";
+            artist.style.opacity = "0";
             playerControls.style.display = "none";
             playerProgress.style.display = "none";
         },800); 
@@ -43,7 +43,9 @@ function ctlPlayerSign() {
         musicPlayerSign.classList.replace('signIsOff', 'signIsOn');
         toggleSign = true;
         setTimeout(()=> {
-            
+            musicContainer.style.opacity = "1";
+            title.style.opacity = "1";
+            artist.style.opacity = "1";
             musicContainer.style.display = "block";
             title.style.display = "block";
             artist.style.display = "block";
