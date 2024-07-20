@@ -38,7 +38,7 @@ function ctlPlayerSign() {
             artist.style.opacity = "0";
             playerControls.style.display = "none";
             playerProgress.style.display = "none";
-        },800); 
+        },500); 
     }else {
         musicPlayerSign.classList.replace('signIsOff', 'signIsOn');
         toggleSign = true;
