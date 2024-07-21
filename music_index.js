@@ -229,6 +229,60 @@ document.addEventListener('customLoadEvent', function() {
 
 function resumeBtnHoverStyle(){
     const gradientBox = document.getElementsByClassName('button_inner q')[0];
+    const cmeBtn_i = document.getElementsByClassName('cmeBtn-i')[0];
+    const cmeBtnBgColor = document.getElementsByClassName('cmebutton-bg-color')[0];
+    const cmebutton = document.getElementsByClassName('cmebutton')[0];
+    let gradientBox_hover = false;
+    let cmebutton_hover = false;
+    let angle = 270;
+    const colors = ['#743ad5', '#d53a9d'];
+    gradientBox.addEventListener('mouseenter', function() {
+
+        gradientBox_hover = true;
+    });
+   
+    gradientBox.addEventListener('mouseleave', function() {
+        gradientBox.style.background = 'none';
+        gradientBox_hover = false;
+    });
+
+    cmebutton.addEventListener('mouseenter', function() {
+
+        cmeBtn_i.style.opacity = '0';
+        cmeBtnBgColor.style.opacity = '0';
+        cmebutton.style.padding = '20px 40px';
+        cmebutton_hover = true;
+    });
+   
+    cmebutton.addEventListener('mouseleave', function() {
+        cmeBtn_i.style.opacity = '1';
+        cmeBtnBgColor.style.opacity = '1';
+        cmebutton.style.padding = '16px 40px';
+        cmebutton_hover = false;
+        
+    });
+
+    setInterval(()=>{
+        if(!cmebutton_hover) {
+            if (angle === 360) {
+                angle = 45;
+            }
+            angle += 45; 
+            cmeBtnBgColor.style.background = `linear-gradient(${angle}deg, ${colors.join(', ')})`;
+        }
+        if(gradientBox_hover) {
+            if (angle === 360) {
+                angle = 45;
+            }
+            angle += 45; 
+            gradientBox.style.background = `linear-gradient(${angle}deg, ${colors.join(', ')})`;
+        }
+    },100);
+}
+
+/*
+function resumeBtnHoverStyle(){
+    const gradientBox = document.getElementsByClassName('button_inner q')[0];
     let gradientBox_hover = false;
     let angle = 270;
     const colors = ['#743ad5', '#d53a9d'];
@@ -251,7 +305,7 @@ function resumeBtnHoverStyle(){
             gradientBox.style.background = `linear-gradient(${angle}deg, ${colors.join(', ')})`;
         }
     },100);
-}
+} */
 
 window.addEventListener("load", function() {
     fetchAndConvertToBlob(musicOneSrcUrl)
