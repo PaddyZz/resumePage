@@ -28,11 +28,12 @@ function setVolume(){
 }
 
 function ctlPlayerSign() {
+    const musicWholeContainer = document.getElementsByClassName('music_whole_container')[0];
     if (toggleSign) {
         musicPlayerSign.classList.replace('signIsOn', 'signIsOff');
         toggleSign = false;
         setTimeout(()=> {
-    
+            musicWholeContainer.style.zIndex = "0";
             musicContainer.style.opacity = "0";
             title.style.opacity = "0";
             artist.style.opacity = "0";
@@ -43,6 +44,7 @@ function ctlPlayerSign() {
         musicPlayerSign.classList.replace('signIsOff', 'signIsOn');
         toggleSign = true;
         setTimeout(()=> {
+            musicWholeContainer.style.zIndex = "3";
             musicContainer.style.opacity = "1";
             title.style.opacity = "1";
             artist.style.opacity = "1";
